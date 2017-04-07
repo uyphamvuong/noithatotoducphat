@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+.sbHolder{
+	height: 30px;
+	position: relative;
+	width: 140px;
+	outline:none;
+	float: left;
+	border-right: 1px solid #ccc;
+	background:url(../images/input.html) no-repeat;
+}
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
+	display: block;
+	height: 30px;
+	left: 0;
+	line-height: 30px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 170px;
+	margin:0px 0px 0px 0px;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #000;
+	outline: none;
+	text-decoration: none;
+}
+.sbToggle{
+	background: url(../images/drop.html) no-repeat 13px 15px;
+	display: block;
+	height: 30px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+}
+.sbToggle:hover{
+	background: url(../images/drop.html) no-repeat 13px 15px;
+}
+.sbToggleOpen{
+	background: url(../images/drop.html) no-repeat 13px 15px;
+}
+.sbToggleOpen:hover{
+	background: url(../images/drop.html) no-repeat 13px 15px;
+}
+.sbHolderDisabled{
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+	list-style: none;
+	left: -1px;
+	box-shadow:0px 0px 3px #666666;
+	background-color:#FFF;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	width: 139px;
+	margin-left:1px;
+	z-index: 100;
+	overflow-y: auto;
+}
+.sbOptions li{
+	padding: 0 0px;
+}
+.sbOptions a{
+	border-bottom: solid 1px #CCCCCC ;
+	display: block;
+	outline: none;
+	padding: 4px 0 4px 9px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #000;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	color: #fff;
+	background-color:#029C99;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	color: #fff;
+	display: block;
+	padding: 3px 0 3px 3px;
+}
+.sbOptions .sbGroup{
+	color: #fff;
+	display: block;
+	font-weight: bold;
+	padding: 3px 0 3px 3px;
+}
+.sbOptions .sbSub{
+}
