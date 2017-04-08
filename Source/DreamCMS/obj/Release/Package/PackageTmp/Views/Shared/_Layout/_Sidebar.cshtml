@@ -1,0 +1,126 @@
+﻿@using DreamCMS.Models
+
+@{
+    DBFrontEnd db = new DBFrontEnd();
+    List<Post> ListPost = db.Posts.Where(x => x.IsDisable == false).OrderByDescending(x => x.PostId).Take(5).ToList();
+    if (ListPost == null) { ListPost = new List<Post>(); }
+
+    List<News> ListNews = db.Newss.Where(x => x.IsDisable == false).OrderByDescending(x => x.NewsId).Take(5).ToList();
+    if (ListNews == null) { ListNews = new List<News>(); }
+
+    List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.IsDisable == false && x.IdRoot == null).OrderBy(x => x.GroupName).OrderBy(x => x.Order).ToList();
+    if (ListGroupProduct == null) { ListGroupProduct = new List<GroupProduct>(); }
+
+    List<SliderLeft> ListSliderLeft = db.SliderLefts.OrderByDescending(x => x.Order).ToList();
+    if (ListSliderLeft == null) { ListSliderLeft = new List<SliderLeft>(); } 
+    
+    string VideoYoutube = Setting.Get("VideoYoutube");    
+    if (!string.IsNullOrEmpty(VideoYoutube)) { VideoYoutube = VideoYoutube.Replace("watch?v=", "embed/"); }
+
+    string FacebookFanpage = Setting.Get("FacebookFanpage");
+}
+
+@if (ListGroupProduct.Count > 0)
+{
+    <!-- DANH MỤC SẢN PHẨM -->
+    <div class="panel-edit panel-category-product">
+        <div class="panel-heading"><h4>Danh mục sản phẩm</h4></div>
+        <div class="panel-body">
+            <ul>
+                @foreach (GroupProduct gp in ListGroupProduct)
+                {
+                    @Html.Partial("_Layout/__ItemGroupProduct", gp)
+                }
+            </ul>
+        </div>
+
+    </div>
+}
+
+
+@if (!string.IsNullOrEmpty(VideoYoutube))
+{
+    <!-- VIDEO GIỚI THIỆU -->
+    <div class="panel-edit">
+        <div class="panel-heading"><h4>Video giới thiệu</h4></div>
+        <div class="panel-body">
+            <iframe class="fit-video" style="width: 100%" src="@VideoYoutube" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+}
+
+@if (ListPost.Count > 0)
+{
+    <!-- HOẠT ĐỘNG-->
+    <div class="panel-edit panel-news">
+        <div class="panel-heading"><h4>Hoạt động</h4></div>
+        <div class="panel-body">
+            <ul>
+                @foreach(Post p in ListPost)
+                {
+                    <li><a title="@p.Title - @p.Intro" href="/hoat-dong/@p.TitleId">@p.Title</a></li>
+                }
+            </ul>
+            <div class="text-right">
+                <a href="/hoat-dong">Xem thêm...</a>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ListNews.Count > 0)
+{
+    <!-- TIN TỨC-->
+    <div class="panel-edit panel-news">
+        <div class="panel-heading"><h4>Tin tức</h4></div>
+        <div class="panel-body">
+            <ul>
+                @foreach (News p in ListNews)
+                {
+                    <li><a title="@p.Title - @p.Intro" href="/tin-tuc/@p.TitleId">@p.Title</a></li>
+                }
+            </ul>
+            <div class="text-right">
+                <a href="/tin-tuc">Xem thêm...</a>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ListSliderLeft.Count > 0)
+{
+    <div class="panel-edit">
+        <div class="panel-heading"><h4>Thư viện hình ảnh</h4></div>
+        <div class="panel-body">
+            <div id="rev_sliderLeft_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0 auto;background-color:#E9E9E9;padding:0;margin-top:0;margin-bottom:0;">
+                <div id="rev_sliderLeft" class="rev_slider fullwidthabanner" style="display:none;">
+                    <ul>
+                        @foreach (SliderLeft sl in ListSliderLeft)
+                        {
+                            <li data-transition="random" data-slotamount="7" data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-link="@sl.Link">
+                                <img src="@sl.ImgUrl" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            </li>
+                        }
+                    </ul>
+                    <div class="tp-bannertimer tp-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(FacebookFanpage))
+{
+   <!-- FANPAGE -->
+    <div class="panel-edit">
+        <div class="panel-heading"><h4>Về chúng tôi</h4></div>
+        <div class="panel-body">
+            <iframe src="https://www.facebook.com/plugins/likebox.php?href=@(Html.Raw(HttpUtility.UrlEncode(FacebookFanpage)))&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:290px;" allowtransparency="true"></iframe>
+            @Html.Raw(Setting.Get("PluginOther"))
+        </div>
+    </div>
+}
+
+
+
+

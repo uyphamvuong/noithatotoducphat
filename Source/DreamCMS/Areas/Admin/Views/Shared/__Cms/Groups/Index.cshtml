@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DreamCMS.ModelsAdmin.tbGroup>
+
+@{
+    ViewBag.Title = "Danh sách nhóm";
+    ViewBag.Description = "Các nhóm sử dụng cho phân quyền sử dụng các chức năng Admin Cpanel.";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Thêm nhóm mới", "Create", null, new { @class="btn btn-info" })
+</p>
+<table class="table table-striped table-hover table-bordered table-advance">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDisable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GroupName)
+                </td>
+                <td>
+                    @Html.Raw(item.Description != null ? item.Description.Replace("\n", "<br >") : "")
+                </td>
+                <td>
+                    @if (item.IsDisable)
+                    {
+                        <span class="label label-success">ON</span>
+
+                    }
+                    else
+                    {
+                        <span class="label label-danger">OFF</span>
+                    }
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Thành viên", "ViewMember", new { id = item.tbGroupId }, new { @class = "btn btn-xs yellow" })
+                    @Html.ActionLink("Menu", "PermissonGroup", new { id = item.tbGroupId }, new { @class = "btn btn-xs blue" })
+                    @Html.ActionLink(DTextHTML.Edit, "Edit", new { id = item.tbGroupId }, new { @class = "btn btn-xs green" })
+                    @Html.ActionLink(DTextHTML.Delete, "Delete", new { id = item.tbGroupId }, new { @class = "btn btn-xs red" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@using DreamCMS.ModelsAdmin
+@model DreamCMS.ModelsAdmin.tbMenu
+@{
+    List<tbMenu> Lmenu = Model.tbMenuChildrens.Where(x => x.IsDisable == false && x.IsMenu == true).OrderBy(x => x.Order).ToList();
+    if (Lmenu == null) { Lmenu = new List<tbMenu>(); }
+}
+<li class="dd-item" data-id="@Model.tbMenuId">
+    <div class="dd-handle">@Model.MenuName</div>
+    @if (Lmenu.Count > 0)
+    {
+        <ol class="dd-list">
+            @foreach (var m in Lmenu)
+            {
+                @Html.Partial("__Cms/Menus/__ItemMenu", m)
+            }
+        </ol>
+    }
+</li>

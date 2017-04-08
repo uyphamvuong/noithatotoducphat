@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Decrypt Pass";
+    ViewBag.Description = "Xem pass user, các chuỗi mã hóa...";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Encrypt</h3>
+        <form method="post" action="">
+            <input name="typepass" type="hidden" value="d" />
+            <div class="form-group">
+                <textarea name="content" class="form-control" rows="5" placeholder="Dán chuỗi mã hóa ở đây">@ViewBag.StrEncrypt</textarea>
+            </div>
+            <div class="form-group">
+                <label>KeyPass</label>
+                <input name="keypass" type="text" class="form-control" value="@ViewBag.StrDePass" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Giải mã chuỗi này</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h3>Decrypt</h3>
+        <form method="post" action="">
+            <input name="typepass" type="hidden" value="e" />
+            <div class="form-group">
+                <textarea name="content" class="form-control" rows="5" placeholder="Dán chuỗi cần mã hóa ở đây">@ViewBag.StrDecrypt</textarea>
+            </div>
+            <div class="form-group">
+                <label>KeyPass</label>
+                <input name="keypass" type="text" class="form-control" value="@ViewBag.StrEnPass" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">Mã hóa chuỗi này</button>
+            </div>
+        </form>
+</div>
+</div>

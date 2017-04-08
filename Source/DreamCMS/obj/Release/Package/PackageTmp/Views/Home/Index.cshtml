@@ -1,0 +1,142 @@
+﻿@using DreamCMS.Models
+@model IEnumerable<DreamCMS.Models.Product>
+@{
+    ViewBag.Title = "Trang chủ";
+    ViewBag.Description = System.Text.RegularExpressions.Regex.Replace(Setting.Get("TopContact"), @"<[^>]*>", String.Empty);
+    ViewBag.Keywords = Setting.Get("CompanyName");
+
+    //Giới thiệu
+    DreamCMS.Models.Page gt = ViewBag.GioiThieu;
+
+    //8 sản phẩm
+    List<Product> ListProduct = ViewBag.ListProduct;
+
+    //6 hoạt đông
+    List<Post> ListPost = ViewBag.ListPost;
+
+    //Đối tác
+    List<Partner> ListPartner = ViewBag.ListPartner;
+}
+
+
+@if (gt != null)
+{
+    <!-- GIỚI THIỆU -->
+    <div class="well-edit well-intro">
+        <a href="/gioi-thieu"><h4 class="h4"><span>Giới thiệu về công ty</span></h4></a>
+        <p>
+            @Html.Raw(gt.Intro)
+            <a href="/gioi-thieu">Xem thêm...</a>
+        </p>
+    </div>
+}
+
+@if (ListProduct.Count > 0)
+{
+    <!-- SẢN PHẨM -->
+    <div class="well-edit well-product">
+        <a href="/san-pham"><h4 class="h4"><span>Sản phẩm</span></h4></a>
+        <div class="row">
+            <div class="list-product">
+                @foreach (Product p in ListProduct)
+                {
+                    <div class="item-product">
+                        <div class="item-product-img">
+                            <a href="/san-pham/@p.GroupProduct.SeoUrl/@p.SeoUrl"><img src="@p.ImgUrl" alt="@p.ProductName" /></a>
+                        </div>
+                        <a href="/san-pham/@p.GroupProduct.SeoUrl/@p.SeoUrl"><h5>@p.ProductName</h5></a>
+                        <a href="/san-pham/@p.GroupProduct.SeoUrl/@p.SeoUrl"><span class="view-more">Xem chi tiết</span></a>
+                    </div>
+                }
+            </div>            
+        </div>
+    </div>
+}
+
+@if (ListPost.Count > 0)
+{
+    Post FirstPost = ListPost[0];
+    <!-- HOẠT ĐỘNG -->
+    <div class="well-edit well-event">
+        <a href="/hoat-dong"><h4 class="h4"><span>Các hoạt động</span></h4></a>
+        <div class="row">
+            @for (int i = 0; i < ListPost.Count; i++)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="event-item">
+                        <div class="img"><a href="/hoat-dong/@ListPost[i].TitleId"><img src="@ListPost[i].ImgUrl" alt="@ListPost[i].Title" /></a></div>
+                        <div class="sub">
+                            <a href="/hoat-dong/@ListPost[i].TitleId"><h4>@ListPost[i].Title</h4></a>
+                            <p>@ListPost[i].Intro</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@if (ListPartner.Count > 0)
+{
+    <!-- ĐỐI TÁC -->
+    <div class="well-edit well-partner">
+        <h4 class="h4"><span>Link giới thiệu</span> <span class="prev"><</span><span class="next">></span></h4>
+        <div id="owl-slider-partner">
+            @foreach (Partner pa in ListPartner)
+            {
+                <a href="@pa.Link" target="_blank" >
+                    <div class="item-partner">
+                        <div class="item-partner-img"><img class="img-responsive" src="@pa.ImgUrl" alt="" /></div>
+                        <span>@pa.CompanytName</span>
+                    </div>
+                </a>
+            }            
+        </div>
+    </div>
+}
+
+
+@section styles{
+    <link href="~/assets/js/owlcarousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/assets/js/owlcarousel/owl.transitions.css" rel="stylesheet" />    
+}
+
+@section scripts{
+    <script src="~/assets/js/owlcarousel/owl.carousel.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            var owl = $("#owl-slider-partner");
+
+            owl.owlCarousel({
+
+                items: 5, //10 items above 1000px browser width
+                itemsDesktop: [1000, 5], //5 items between 1000px and 901px
+                itemsDesktopSmall: [900, 3], // 3 items betweem 900px and 601px
+                itemsTablet: [600, 2], //2 items between 600 and 0;
+                itemsMobile: [320, 1], // itemsMobile disabled - inherit from itemsTablet option,
+                autoPlay: 2000
+
+            });
+
+            // Custom Navigation Events
+            $(".next").click(function () {
+                owl.trigger('owl.next');
+            });
+            $(".prev").click(function () {
+                owl.trigger('owl.prev');
+            });
+
+            if ($('#slider-t').length > 0) {
+                $('#slider-t').nivoSlider({
+                    controlNav: false
+                });
+            }
+
+        });
+    </script>
+
+    
+
+}

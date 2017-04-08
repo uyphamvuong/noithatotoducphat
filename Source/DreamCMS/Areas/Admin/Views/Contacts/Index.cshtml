@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DreamCMS.Models.Contact>
+
+@{
+    ViewBag.Title = "Liên hệ";
+    ViewBag.Description = "Các liên hệ, góp ý được gởi đến trang web";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered table-advance table-hover" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr @(!item.IsSeen ? "class=success" : "") >
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @(item.Content.Length>50?item.Content.Substring(0,50):item.Content) ...
+        </td>
+        <td>
+            @Html.ActionLink(DTextHTML.Details, "Details", new { id = item.ContactId }, new { @class = "btn btn-xs blue" })
+            @Html.ActionLink(DTextHTML.Delete, "Delete", new { id = item.ContactId }, new { @class = "btn btn-xs red" })
+        </td>
+    </tr>
+}
+
+</table>

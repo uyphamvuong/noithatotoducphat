@@ -1,0 +1,37 @@
+﻿@using DreamCMS.Models
+@using MvcPaging
+@model IPagedList<News>
+
+@{
+    ViewBag.Title = "Danh sách các tin tức";
+    ViewBag.Description = "Tin tức là tin về ngành bao bì, tin nổi bật,...";
+    ViewBag.Keywords = "tin tức, danh sách, công ty";
+}
+
+<!-- HOẠT ĐỘNG -->
+<div class="well-edit well-event">
+    <h4 class="h4"><span>Tin tức</span></h4>
+
+    @foreach(News po in Model)
+    {
+        <div class="row">
+            <div class="col-sm-3 item-event-img">
+                <a href="/tin-tuc/@po.TitleId"><img class="img-responsive" src="@po.ImgUrl" /></a>
+            </div>
+            <div class="col-sm-9 item-event-sub">
+                <a href="/tin-tuc/@po.TitleId"><h5>@po.Title</h5></a>
+                <p>
+                    @po.Intro
+                </p>
+            </div>
+        </div>
+    }
+    
+    <nav class="text-center">
+        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+            .DisplayTemplate("BootstrapPagination")
+            .MaxNrOfPages(7)
+            .AlwaysAddFirstPageNumber()
+        )
+    </nav>
+</div>

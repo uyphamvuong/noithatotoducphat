@@ -1,0 +1,29 @@
+﻿@using DreamCMS.Models
+
+@{
+    if (Request.RawUrl != "/") { return; }
+
+    DBFrontEnd db = new DBFrontEnd();
+    List<SliderImg> ListSliderImg = db.SliderImgs.OrderByDescending(x => x.Order).ToList();
+    if (ListSliderImg == null) { ListSliderImg = new List<SliderImg>(); }
+    if (ListSliderImg.Count == 0) { return; }
+}
+
+<div class="container">
+    <div class="row">
+        <div id="rev_sliderHome_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0 auto;background-color:#E9E9E9;padding:0;margin-top:0;margin-bottom:15px;">
+            <div id="rev_sliderHome" class="rev_slider fullwidthabanner" style="display:none;">
+                <ul>
+                    @foreach (SliderImg si in ListSliderImg)
+                    {
+                        <li data-transition="random" data-fstransition="fade" data-fsmasterspeed="300" data-link="@si.Link">
+                            <img src="@si.ImgUrl" alt="@si.TitleImg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="caption sfl medium_grey" data-x="50" data-y="50" style="font-size: 40px;">@si.TitleImg</div>
+                        </li>
+                    }
+                </ul>
+                <div class="tp-bannertimer"></div>
+            </div>
+        </div>
+    </div>
+</div>
