@@ -20,4 +20,7 @@
 .navbar-nav {
     display: block;
     }
+     .container-fluid li.icon {
+    display: none !important;
+  } 
 }
