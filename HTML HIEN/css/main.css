@@ -25,7 +25,14 @@
 /*BANNER TOP */
 .jumbotron {
     margin-bottom: 0px !important;
+    
 }
+.img-rounded {
+    max-height: 150px;
+    max-width: 150px;
+    float: left;
+}
+/*end banner top*/
 /*menu top*/
 .topnav {
   overflow: hidden;
@@ -67,8 +74,8 @@
 
 /*left menu*/
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-color: #fff;
-background-color: #428bca;
+color: #000;
+background-color: #ffcc2a !important;
 }
 .margintop20 {
     margin-top:20px;
@@ -76,8 +83,8 @@ background-color: #428bca;
 .nav-pills>li>a {
 border-radius: 0px;
 }
-a {
-color: #000;
+.nav-stacked a {
+color: #000 !important;
 text-decoration: none;
 }
 
@@ -94,7 +101,7 @@ border-right:1px solid #dadada;
 }
 
 .active2 {
-    border-right:4px solid #428bca;
+    border-right:4px solid #ffcc2a !important;
 }
 /*end left memu*/
 
@@ -118,7 +125,7 @@ border-right:1px solid #dadada;
 
 /*footer */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+footer { background-color:#36333e; min-height:350px; font-family: 'Open Sans', sans-serif; }
 .footerleft { margin-top:50px; padding:0 36px; }
 .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
 
@@ -147,15 +154,15 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
  .icon { float:left; margin-right:5px;}
  
  
- .copyright { min-height:40px; background-color:#000000;}
- .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
+ .copyright { min-height:40px; background-color:#ffcc2a;}
+ .copyright p { text-align:left; color:#000000; padding:10px 0; margin-bottom:0px;}
  .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
- .post p { font-size:12px; color:#FFF; line-height:20px;}
+ .post p { font-size:12px; color:#000000; line-height:20px;}
  .post p span { display:block; color:#8f8f8f;}
  .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
  .bottom_ul li { float:left; line-height:40px;}
- .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
- .bottom_ul li a { color:#FFF;  font-size:12px;}
+ .bottom_ul li:after { content:"/"; color:#000000; margin-right:8px; margin-left:8px;}
+ .bottom_ul li a { color:#000000;  font-size:12px;}
 /*end footer*/
 /*slider */
 
