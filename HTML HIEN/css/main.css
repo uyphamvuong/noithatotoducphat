@@ -103,6 +103,21 @@ border-right:1px solid #dadada;
 .active2 {
     border-right:4px solid #ffcc2a !important;
 }
+.support {
+    height: 310px;
+    margin-bottom: 13px;
+}
+.support img{
+    display: block;
+}
+.support-contact {
+    display: block;
+    text-align: left;
+    margin: 5px 5px;
+}
+.nav-stacked {
+    text-align: left;
+}
 /*end left memu*/
 
 /*content*/
@@ -119,6 +134,9 @@ border-right:1px solid #dadada;
 
 .thumbnail img {
     width: 100%;
+}
+img{
+    padding: 10px;
 }
 /*end content*/
 
