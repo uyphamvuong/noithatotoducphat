@@ -26,6 +26,7 @@
 .jumbotron {
     margin-bottom: 0px !important;
 }
+/*menu top*/
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -42,8 +43,18 @@
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ffcc2a;
   color: black;
+}
+.active3 {
+    background-color: #ffcc2a;
+    color: #000000;
+}
+.active3 > a {
+    color: #000000 !important;
+}
+.active3 > a:hover {
+    color: white !important;
 }
 
 .topnav .icon {
