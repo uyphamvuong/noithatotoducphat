@@ -1,3 +1,0 @@
-﻿User-agent: *
-Disallow: /admin/
-Sitemap: http://baobitoanquoc.net/sitemap.xml

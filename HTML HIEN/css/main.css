@@ -205,6 +205,18 @@ footer { background-color:#36333e; min-height:350px; font-family: 'Open Sans', s
  .bottom_ul li { float:left; line-height:40px;}
  .bottom_ul li:after { content:"/"; color:#fff; margin-right:8px; margin-left:8px;}
  .bottom_ul li a { color:#fff;  font-size:12px;}
+
+ .back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+.btn-primary {
+    background-color: #ed3237 !important;
+    border-color: #ed3237 !important;
+}
 /*end footer*/
 /*slider */
 
