@@ -10,3 +10,12 @@ function myFunction() {
 
 // slider
 
+// maps
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(10.7766897, 106.6319297),
+    zoom: 16,
+    mapTypeId: 'roadmap'
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
