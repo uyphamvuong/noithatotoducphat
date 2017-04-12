@@ -162,6 +162,10 @@ img{
 .news .table-bordered>tbody>tr>td {
         border: 0px solid #ddd;
 }
+.news-big {
+    margin-left: 2vw;
+    text-align: left;
+}
 /*end content*/
 
 
