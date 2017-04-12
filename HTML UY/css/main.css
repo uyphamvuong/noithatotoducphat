@@ -1,0 +1,290 @@
+
+/*
+
+    Hi! Fuck All!!!
+
+*/
+
+/* Import Font */
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
+/* ======================== BODY & PAGE ALL */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text-main{color:#ed3237}
+.text-bold{font-weight:bold;}
+
+/* ======================== HEADER */
+/* Header */
+.header {
+    background-color: #eee;
+    min-height: 240px;
+    margin-bottom: 20px;
+}
+
+.header .logo{
+    text-align:center
+}
+
+.header .slogan{
+    padding: 20px 0;
+}
+
+.slogan h1{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 30px;
+    font-size: 54px;
+    font-weight:bold;
+}
+
+.slogan .slogan-text{
+    font-size: 20px;
+}
+
+.img-logo {
+    width: 90%;
+}
+/* Navbar */
+.navbar-home{
+    background-color: #333;
+    margin-bottom: 0;
+    border:0;
+}
+
+.navbar-home a{
+    color: #ccc!important;
+    font-size: 16px;
+}
+    .navbar-home a:hover {
+        color: #fff !important;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+.navbar-home .active a{
+    background-color: #ed3237!important;
+    color: #fff!important;
+}
+
+/* ======================== LEFT COL*/
+.sidenav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f1f1f1;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #ed3237 !important;
+}
+    
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+/*BANNER TOP */
+.jumbotron {
+    margin-bottom: 0px !important;
+    
+}
+.img-rounded {
+    max-height: 150px;
+    max-width: 150px;
+    float: left;
+}
+/*end banner top*/
+/*menu top*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ed3237 ;
+  color: #fff;
+}
+.active3 {
+    background-color: #ed3237 ;
+    color: #fff;
+}
+.active3 > a {
+    color: #fff !important;
+}
+.active3 > a:hover {
+    color: white !important;
+}
+.color-white{
+    color: #fff !important;
+}
+.topnav .icon {
+  display: none;
+}
+.topnav {
+    width: 90%;
+    margin-left: 5%;
+}
+/*end menutop*/
+/*slider*/
+
+/*end slider*/
+/*left menu*/
+
+.margintop20 {
+    margin-top:20px;
+}
+.nav-pills>li>a {
+border-radius: 0px;
+}
+.nav-stacked a {
+color: #000;
+text-decoration: none;
+}
+
+a:hover {
+color: #000;
+text-decoration: none;
+}
+.nav-stacked>li+li {
+margin-top: 0px;
+margin-left: 0;
+border-bottom:1px solid #dadada;
+border-left:1px solid #dadada;
+border-right:1px solid #dadada;
+}
+
+.active2 {
+    border-right:4px solid #ed3237 !important;
+}
+.support {
+    height: 310px;
+    margin-bottom: 13px;
+}
+.support img{
+    display: block;
+}
+.support-contact {
+    display: block;
+    text-align: left;
+    margin: 5px 5px;
+}
+.nav-stacked {
+    text-align: left;
+}
+/*end left memu*/
+
+/*content*/
+.panel-default>.panel-heading {
+    background-color: #ed3237 !important;
+    color: #fff !important;
+}
+.btn-info { 
+    background-color: #ed3237 !important;
+    color: #fff !important;
+}
+.row.content {
+    height: 100% !important;
+}
+
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+img{
+    padding: 10px;
+}
+.float-left img, p {
+    float: left;
+}
+
+.panel-primary>.panel-heading {
+    background-color: #ed3237 !important;
+    color: #fff !important;
+}
+.news .table-bordered>tbody>tr>td {
+        border: 0px solid #ddd;
+}
+/*end content*/
+
+
+/*footer */
+footer { background-color:#36333e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+.footerleft { margin-top:50px; padding:0 36px; }
+.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px; width: 100%; text-align: left}
+.footerleft p i { width:20px; color:#999;}
+
+
+.paddingtop-bottom {  margin-top:50px;}
+.footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
+.footer-ul li { line-height:29px; font-size:12px;}
+.footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+.footer-ul i { margin-right:10px;}
+.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ 
+ 
+
+ 
+ .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
+ .icon-ul li { line-height:75px; width:100%; float:left;}
+ .icon { float:left; margin-right:5px;}
+ 
+ 
+ .copyright { min-height:40px; background-color:#ed3237;}
+ .copyright p { text-align:left; color:#fff; padding:10px 0; margin-bottom:0px;}
+ .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+ .post p { font-size:12px; color:#fff; line-height:20px;}
+ .post p span { display:block; color:#8f8f8f;}
+ .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
+ .bottom_ul li { float:left; line-height:40px;}
+ .bottom_ul li:after { content:"/"; color:#fff; margin-right:8px; margin-left:8px;}
+ .bottom_ul li a { color:#fff;  font-size:12px;}
+
+ .back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+.btn-primary {
+    background-color: #ed3237 !important;
+    border-color: #ed3237 !important;
+}
+/*end footer*/
+/*slider */
+
+
+/*end slider*/
+
