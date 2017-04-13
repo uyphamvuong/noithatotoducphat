@@ -29,6 +29,9 @@ body{
     padding: 10px;
     box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
 }
+.no-padding-right{
+    padding-right:0;
+}
 
 /* ======================== HEADER */
 /* Header */
@@ -120,12 +123,40 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f1f1f1;
+    border-radius: 3px;
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
     background-color: #ed3237 !important;
 }
-    
+.panel-product>.panel-heading {
+    background-color: #ed3237 !important;
+    color: #fff !important;
+    text-align: left;
+}
+.panel-product .thumbnail{
+    padding: 0;
+    overflow:hidden;
+}
+    .panel-product .thumbnail img {
+        padding: 0;
+    }
+.panel-product .caption h4{
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+.panel-product .caption p.des{
+    height: 110px;
+}
+.panel-product .btn.btn-info{
+    border:0;
+}
+.panel-product div[class*="col"]{
+}
+.panel-product .panel-body{
+
+}
+
     
     /* Set black background color, white text and some padding */
     footer {
@@ -235,10 +266,7 @@ border-right:1px solid #dadada;
 /*end left memu*/
 
 /*content*/
-.panel-default>.panel-heading {
-    background-color: #ed3237 !important;
-    color: #fff !important;
-}
+
 .btn-info { 
     background-color: #ed3237 !important;
     color: #fff !important;
