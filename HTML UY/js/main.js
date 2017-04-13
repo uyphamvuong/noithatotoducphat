@@ -2,6 +2,7 @@ $(document).ready(function () {
     ScrollToTop();
     StickyMenuOnTop();
     Core_revsliderHome();
+    initialize_property_map_home();
 
 });
 
@@ -30,15 +31,6 @@ function ScrollToTop() {
     }
 }
 
-// Maps
-function myMap() {
-var mapOptions = {
-    center: new google.maps.LatLng(10.7766897, 106.6319297),
-    zoom: 16,
-    mapTypeId: 'roadmap'
-}
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
 
 // StickyMenu On Top
 function StickyMenuOnTop() {
@@ -119,4 +111,42 @@ function Core_revsliderHome() {
              startWithSlide: 0,
              fullScreenOffsetContainer: ""
          });
+}
+
+// Maps
+function initialize_property_map_home() {
+
+    var propertyMarkerInfoHome = { "lat": "10.7766897", "lang": "106.6319297", "icon": "img/villa-map-icon.png", "retinaIcon": "img/villa-map-icon@2x.png" };
+    var url = propertyMarkerInfoHome.icon;
+    var size = new google.maps.Size(42, 57);
+
+    // retina
+    if (window.devicePixelRatio > 1.5) {
+        if (propertyMarkerInfoHome.retinaIcon) {
+            url = propertyMarkerInfoHome.retinaIcon;
+            size = new google.maps.Size(83, 113);
+        }
+    }
+
+    var image = {
+        url: url,
+        size: size,
+        scaledSize: new google.maps.Size(42, 57),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(21, 56)
+    };
+
+    var propertyLocation = new google.maps.LatLng(propertyMarkerInfoHome.lat, propertyMarkerInfoHome.lang);
+    var propertyMapOptions = {
+        center: propertyLocation,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    };
+    var propertyMap = new google.maps.Map(document.getElementById("property_map_home"), propertyMapOptions);
+    var propertyMarker = new google.maps.Marker({
+        position: propertyLocation,
+        map: propertyMap,
+        icon: image
+    });
 }
