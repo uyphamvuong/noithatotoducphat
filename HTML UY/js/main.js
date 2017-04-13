@@ -1,27 +1,35 @@
-$(document).ready(function(){
-     //$(window).scroll(function () {
-     //       if ($(this).scrollTop() > 50) {
-     //           $('#back-to-top').fadeIn();
-     //       } else {
-     //           $('#back-to-top').fadeOut();
-     //       }
-     //   });
-     //   // scroll body to 0px on click
-     //   $('#back-to-top').click(function () {
-     //       $('#back-to-top').tooltip('hide');
-     //       $('body,html').animate({
-     //           scrollTop: 0
-     //       }, 800);
-     //       return false;
-     //   });
-        
-     //   $('#back-to-top').tooltip('show');
+$(document).ready(function () {
+    ScrollToTop();
+    StickyMenuOnTop();
 
 });
 
-// slider
+// Scroll To Top
+function ScrollToTop() {
+    if ($('#back-to-top').length) {
+        var scrollTrigger = 100, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+}
 
-// maps
+// Maps
 function myMap() {
 var mapOptions = {
     center: new google.maps.LatLng(10.7766897, 106.6319297),
@@ -29,4 +37,9 @@ var mapOptions = {
     mapTypeId: 'roadmap'
 }
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
+// StickyMenu On Top
+function StickyMenuOnTop() {
+    $('.navbar-home').scrollToFixed();
 }
