@@ -168,6 +168,9 @@ body{
 }
 
 /*panel-news*/
+.panel.panel-news {
+    box-shadow: none;
+}
 .panel-news .panel-heading{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
