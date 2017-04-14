@@ -1,39 +1,40 @@
 ﻿@using DreamCMS.Models
 
-<nav class="navbar navbar-default navbar-menu-t" role="navigation">
-    <div class="navbar-menu-container container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img src="@Setting.Get("LogoUrlSmall")" width="20" alt="Logo website" /></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Trang chủ</a></li>
-                <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                <li><a href="/san-pham">Sản phẩm</a></li>
-                <li><a href="/tin-tuc">Tin tức</a></li>
-                <li><a href="/hoat-dong">Hoạt động</a></li>
-                <li><a href="/lien-he">Liên hệ</a></li>
-                @Html.Action("menucart","ShoppingCart")
-            </ul>
-            @*<ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="~/Upload/images/flag/vn.png" /> Tiếng Việt</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><img src="~/Upload/images/flag/vn.png" /> Tiếng Việt</a></li>
-                        <li><a href="#"><img src="~/Upload/images/flag/en.png" /> English</a></li>
-                        <li><a href="#"><img src="~/Upload/images/flag/cn.png" /> Tàu khựa</a></li>
-                    </ul>
-                </li>
-            </ul>*@
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+<!-- Nav -->
+<nav class="navbar navbar-default navbar-home">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">TRANG CHỦ <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ÂM THANH <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">LINH KIỆN</a></li>
+                    <li><a href="#">DỊCH VỤ</a></li>
+                    <li><a href="#">TIN TỨC</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </div>
+</nav><!-- END Nav -->

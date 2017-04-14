@@ -41,96 +41,199 @@
     @*<link href="https://plus.google.com/108890119457447921515000" rel="publisher" />*@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- CSS LIBRARY -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/assets/js/nivoslider/nivo-slider.css" rel="stylesheet" />
-    <link href="~/assets/js/nivoslider/themes/default/default.css" rel="stylesheet" />
+    <!--css-->
+    <link href="~/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/animate.min.css" rel="stylesheet" />
     <link href="~/assets/js/revslider/css/settings.css" rel="stylesheet" />
-    <link href="~/assets/css/core.css" rel="stylesheet" />
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+    <link href="~/assets/css/responsive.css" rel="stylesheet" />
 
     @RenderSection("styles", required: false)
-
-    <!-- CSS CUSTOM -->
-    <link href="~/assets/css/edit.css" rel="stylesheet" />
-
-    <!-- JavaScript library that detects HTML5 and CSS3 features in the user's browser -->
-    <script src="~/assets/js/modernizr-2.8.3.min.js"></script>
+    
 </head>
-<body style="background: #eee url(@Setting.Get("BackgroundWebUrl")) fixed;">
+<body style="background: #fff url(@Setting.Get("BackgroundWebUrl")) fixed;">
     <!-- LOADING -->
-    <div class="loading-container">
-        <div class="loading-icon"><a class="logo" href="/"><img src="@Setting.Get("LogoUrlBig")" /></a><br /><div class="pulse"></div></div>
-    </div>
+    
 
     <!-- [HEADER] -->
-    <header id="header">
-        <div id="panel-top" class="container">
-            <div class="row">
-                <div class="logo-t col-md-2 col-sm-3"><a href="javascript:;"><img src="@Setting.Get("LogoUrlBig")" class="img-responsive" /></a></div>
-                @*<div class="intro-t col-md-5 col-sm-9 hidden-xs">
-                        <h4>@Setting.Get("CompanyName")</h4>
-                        <div>
-                            @Html.Raw(Setting.Get("TopContact"))
-                        </div>
-                    </div>*@
-                <div class="banner-t col-md-10 col-sm-9 hidden-xs">
-                    @Html.Partial("_Layout/_TopBanner")
+    <header class="header clearfix">
+        <div class="container">
+            <div class="row row-intro-top">
+                <a class="logo col-sm-3" href="#"><img src="~/assets/img/logo.png" class="img-logo" alt="Cinque Terre"></a>
+                <div class="slogan col-sm-8">
+                    <h1>NỘI THẤT Ô TÔ <span class="text-main">ĐỨC PHÁT</span></h1>
+                    <p class="slogan-text">CHUYÊN CUNG CẤP SẢN PHẨM NỘI THẤT Ô TÔ TRÊN TOÀN QUỐC</p>
+                    <p>Địa chỉ: 825 Lũy Bán Bích, P.Tân Thành, Q,Tân Phú, HCM</p>
                 </div>
             </div>
         </div>
 
         @Html.Partial("_Layout/_TopNavbar")
+    </header>   
 
-    </header>
+    @Html.Partial("_Layout/_Slider")
 
     <!-- [BODY] -->
     <div id="body">
 
-        @Html.Partial("_Layout/_Slider")
-
-        <div id="wrap" class="container">
-            <div class="row">
-                <div id="render-body" class="col-md-9 col-sm-8 ">
-
-                    @RenderBody()
-
+        <div class="container">
+            <div class="row content">
+                <div class="col-sm-3 sidenav">
+                    <div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active"><a href="#"><span class="glyphicon"></span>ÂM THANH - HÌNH ẢNH</a></li>
+                            <li><a href="#"><span class="glyphicon "></span>Màn hình</a></li>
+                            <li><a href="#" class="active2"><span class="glyphicon "></span>Thiết bị thông báo</a></li>
+                            <li><a href="#"><span class="glyphicon"></span>Loa</a></li>
+                            <li><a href="#"><span class="glyphicon"></span>Còi</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear" style="padding: 10px;"></div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#" class="color-white"><span class="glyphicon "></span>LINH KIỆN</a></li>
+                        <li><a href="#"><span class="glyphicon "></span>Gối</a></li>
+                        <li><a href="#" class=""><span class="glyphicon "></span>Thiết bị gạc mưa</a></li>
+                        <li><a href="#"><span class="glyphicon"></span>Bệ bước ô tô</a></li>
+                        <li><a href="#"><span class="glyphicon"></span>Nước hoa ô tô</a></li>
+                    </ul>
+                    <div class="clear" style="padding: 10px;"></div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> HỖ TRỢ TRỰC TUYẾN</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> lehuuhien1991@gmail.com</a></li>
+                        <li><a href="#" class=""><span class="glyphicon glyphicon-earphone"></span> 090 909 0091</a></li>
+                    </ul>
+                    <div class="clear" style="padding: 10px;"></div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-heart"></span> THỐNG KÊ TRUY CẬP</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Đang trực tuyến :</a></li>
+                        <li><a href="#" class=""><span class="glyphicon glyphicon-star-empty"></span> Ngày:</a></li>
+                        <li><a href="#" class=""><span class="glyphicon glyphicon-fire"></span> Tháng:</a></li>
+                        <li><a href="#" class=""><span class="glyphicon glyphicon-subtitles"></span> Tổng:</a></li>
+                    </ul>
                 </div>
-                <div id="slidebar" class="col-md-3 col-sm-4">
 
-                    @Html.Partial("_Layout/_Sidebar")
+                <div class="col-sm-9">
+                    @RenderBody();
+                </div>
+            </div>
+        </div>
 
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel panel-news">
+                        <div class="panel-heading">TIN TỨC VÀ SỰ KIỆN</div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="thumbnail"><img src="~/assets/img/anh1.png" /></div>
+                                <h3 class="big-title">Món quà hằng năm</h3>
+                                <p>
+                                    Use the retina ready news Bootstrap themes to create attractive news magazine website with response
+                                    layout, as it will make your website stand out different ...
+                                </p>
+                            </div>
+                            <div class="col-sm-6 news">
+                                <div class="sma-news">
+                                    <div class="thumbnail"><img src="~/assets/img/anh1.png" /></div>
+                                    <h5 class="sma-title">SÀN GỖ MALAYSIA NÊN SỬ DỤNG LOẠI NÀO TỐT NHẤT</h5>
+                                </div>
+                                <div class="sma-news">
+                                    <div class="thumbnail"><img src="~/assets/img/anh1.png" /></div>
+                                    <h5 class="sma-title">SÀN GỖ MALAYSIA NÊN SỬ DỤNG LOẠI NÀO TỐT NHẤT</h5>
+                                </div>
+                                <div class="sma-news">
+                                    <div class="thumbnail"><img src="~/assets/img/anh1.png" /></div>
+                                    <h5 class="sma-title">SÀN GỖ MALAYSIA NÊN SỬ DỤNG LOẠI NÀO TỐT NHẤT</h5>
+                                </div>
+                                <div class="sma-news">
+                                    <div class="thumbnail"><img src="~/assets/img/anh1.png" /></div>
+                                    <h5 class="sma-title">SÀN GỖ MALAYSIA NÊN SỬ DỤNG LOẠI NÀO TỐT NHẤT</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-news">
+                        <div class="panel-heading">VIDEO</div>
+                        <div class="content">
+                            <iframe style="width:100%;" height="300" src="https://www.youtube.com/embed/8NsdO6YXO7A"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- [FOOTER] -->
-    <footer id="footer">
-        <div class="panel-bottom container bg-dark" data-stellar-background-ratio="0.5" style="background-image: url(@Setting.Get("BottomBackgroudUrl"));">
-            @Html.Partial("_Layout/_BottomContact")
-            <div class="row copyright">
-                <div class="float-left">
-                    Copyright &copy;  @DateTime.Now.Year Widensky. All Rights Reserved.
+    <footer>
+        <div class="container" style="margin-bottom: 3vh">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footerleft ">
+                    <div class="logofooter">TRANG TRÍ NỘI THẤT Ô TÔ <b style="color: #ed3237">ĐỨC PHÁT</b></div>
+                    <p><i class="fa fa-map-pin"></i>Địa chỉ: 825 Lũy Bán Bích, P.Tân Thành, Q,Tân Phú, HCM</p>
+                    <p><i class="fa fa-phone"></i> Hotline: 0933 838 169</p><br />
+                    <p><i class="fa fa-envelope"></i> E-mail : otoducphat@gmail.com</p>
+                </div>
+                <!--<div class="col-md-2 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">GENERAL LINKS</h6>
+                    <ul class="footer-ul">
+                        <li><a href="#"> Career</a></li>
+                        <li><a href="#"> Privacy Policy</a></li>
+                        <li><a href="#"> Terms & Conditions</a></li>
+                        <li><a href="#"> Client Gateway</a></li>
+                        <li><a href="#"> Ranking</a></li>
+                        <li><a href="#"> Case Studies</a></li>
+                        <li><a href="#"> Frequently Ask Questions</a></li>
+                    </ul>
+                </div>-->
+                <div class="col-md-4 col-sm-6 paddingtop-bottom">
+                    <div class="post">
+                        <div id="property_map_home" style="width:100%;height:300px;"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 paddingtop-bottom">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFordVietnam%2F&tabs=timeline&width=340&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" height="300" style="border:none;overflow:hidden;width:100%" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>© 2016 - All Rights with DREAM-CMS</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="bottom_ul">
+                            <li><a href="#">dream-cms.com</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Faq's</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWM3Fvzg1pYsstSe_zw-sytbywovC9DzM"></script>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-    <!-- JQUERY LIBRARY -->
-    <script src="~/assets/js/jquery/jquery.min.js"></script>
-    <script src="~/assets/js/bootstrap/bootstrap.min.js"></script>
-    <script src="~/assets/js/bootstrap-hover/bootstrap-hover-dropdown.min.js"></script>
-    <script src="~/assets/js/scrolltofixed/jquery-scrolltofixed-min.js"></script>
-    <script src="~/assets/js/stellar/jquery.stellar.min.js"></script>
-    <script src="~/assets/js/fitvids/jquery.fitvids.js"></script>
-    <script src="~/assets/js/nivoslider/jquery.nivo.slider.pack.js"></script>
+    <!-- JQUERY -->
+    <script src="~/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/assets/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/js/scrolltofixed/jquery-scrolltofixed-min.js" type="text/javascript"></script>
     <script src="~/assets/js/revslider/js/jquery.themepunch.plugins.min.js"></script>
     <script src="~/assets/js/revslider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/assets/js/main.js" type="text/javascript"></script>
 
-    <!-- JQUERY CUSTOM -->
-    <script src="~/assets/js/core.js"></script>
-    <script src="~/assets/js/edit.js"></script>
+    <!-- JavaScript library that detects HTML5 and CSS3 features in the user's browser -->
+    <script src="~/assets/js/modernizr-2.8.3.min.js"></script>
 
     @RenderSection("scripts", required: false)
 
