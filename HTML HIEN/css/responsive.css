@@ -1,31 +1,15 @@
+@media only screen and (min-width: 900px) {
+    
+}
+@media only screen and (max-width: 768px) {
+    .navbar-home .logo-scroll {
+        visibility: hidden;
+    }  
+}
+@media only screen and (max-width: 900px) and (min-width: 768px){
 
+}
 @media only screen and (max-width: 480px) and (min-width: 320px){
  
 }
-@media only screen and (max-width: 900px) and (min-width: 768px){
- .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-}
- .navbar-nav {
-    display: none;
-    }
-  .container-fluid li.icon {
-    float: right;
-    display: block !important;
-  } 
-  @media only screen and (max-width: 900px){
-    .jumbotron .container .text-center .h1,p {
-      display: none;
-    }
-  }
-@media only screen and (min-width: 900px){
-.navbar-nav {
-    display: block;
-    }
-     .container-fluid li.icon {
-    display: none !important;
-  } 
-}
+
