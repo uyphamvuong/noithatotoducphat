@@ -13,7 +13,6 @@ namespace DreamCMS.Controllers
 
         public ActionResult Index()
         {
-
             // Giới thiệu
             Page gt = db.Pages.Where(x => x.TitleId == "gioi-thieu").FirstOrDefault();
             ViewBag.GioiThieu = gt;
