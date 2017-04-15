@@ -32,7 +32,7 @@
                             <img src="@pd.ImgUrl" alt="">
                             <div class="caption">
                                 <h4>@pd.ProductName</h4>
-                                <p class="des">@pd.Des</p>
+                                <p class="des">@Html.Raw(pd.Des)</p>
                                 <p>
                                     <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Order</a>
                                     <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
