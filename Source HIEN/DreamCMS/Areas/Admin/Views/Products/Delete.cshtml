@@ -1,0 +1,27 @@
+﻿@model DreamCMS.Models.Product
+
+@{
+    ViewBag.Title = "Xác nhận xóa sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="note note-danger">
+        <h4>Bạn có chắc muốn xóa trang "<b>@Model.ProductName</b>" ?</h4>
+        <p>
+            Hãy chắc chắn rằng bạn muốn xóa sản phẩm này?
+        </p>
+        <p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <input type="submit" value="@DTextHTML.ConfirmDelete" class="btn btn-danger" />
+                    @Html.ActionLink(DTextHTML.BackList, "Index", null, new { @class = "btn btn-warning" })
+                </div>
+            }
+        </p>
+    </div>
+</div>
+

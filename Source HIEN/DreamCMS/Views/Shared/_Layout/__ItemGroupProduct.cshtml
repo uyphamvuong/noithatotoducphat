@@ -1,0 +1,20 @@
+﻿@using DreamCMS.Models
+@model DreamCMS.Models.GroupProduct
+
+@{
+    List<GroupProduct> ListGroupProduct = Model.GroupProductChildrens.Where(x => x.IsDisable == false).OrderBy(x => x.GroupName).OrderBy(x => x.Order).ToList();
+    if (ListGroupProduct == null) { ListGroupProduct = new List<GroupProduct>(); }
+}
+
+<li>
+    <a href="/san-pham/@Model.SeoUrl">@Model.GroupName</a>
+    @if (ListGroupProduct.Count > 0)
+    {
+        <ul>
+            @foreach (GroupProduct gpi in ListGroupProduct)
+            {
+                @Html.Partial("_Layout/__ItemGroupProduct", gpi)
+            }
+        </ul>
+    }
+</li>

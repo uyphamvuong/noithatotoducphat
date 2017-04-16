@@ -1,0 +1,13 @@
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Config.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Config.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Default.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Encrypt.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\EntityFramework.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Default.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\DreamCMS.Encrypt.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\EntityFramework.xml
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\obj\Debug\DreamCMS.Config.csprojResolveAssemblyReference.cache
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\obj\Debug\DreamCMS.Config.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Config\obj\Debug\DreamCMS.Config.pdb

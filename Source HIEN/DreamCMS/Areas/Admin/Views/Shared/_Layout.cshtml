@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | DreamCMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="@ViewBag.Description" name="description" />
+    <meta content="Uy Pham Vuong" name="author" />
+
+    <!-- BEGIN PACE PLUGIN FILES -->
+    @*<script src="~/Areas/Admin/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <link href="~/Areas/Admin/assets/plugins/pace/themes/pace-theme-minimal.css" rel="stylesheet" type="text/css" />*@
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/admin/css_global")
+    @Styles.Render("~/admin/css_theme")
+    @RenderSection("styles", required: false)
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<body class="page-header-fixed">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-fixed-top">
+        <div class="header-inner">
+            <a class="navbar-brand" href="/Admin"><img src="~/Areas/Admin/assets/img/logolong.png" alt="logo" class="img-responsive" /></a>
+            <div class="sidebar-toggler hidden-phone"></div>
+            <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><img src="~/Areas/Admin/assets/img/menu-toggler.png" alt="" /></a>
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right"> 
+                @*@Html.Partial("_Layout/_NotificationBar")
+                @Html.Partial("_Layout/_InboxBar")
+                @Html.Partial("_Layout/_Taskbar")*@
+                @Html.Partial("_Layout/_UserLogin")
+            </ul>
+
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    <!-- CONTAINER -->
+    <div class="page-container">        
+        @Html.Partial("_Layout/_Sidebar")
+
+        <!-- CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content">                
+                @*@Html.Partial("_Layout/_StyleCustom")*@
+
+                <!-- PAGE HEADER-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- PAGE TITLE & BREADCRUMB-->
+                        <h3 class="page-title">
+                            @ViewBag.Title <small>@ViewBag.Description</small>
+                        </h3>
+                        @Html.Partial("_Layout/_Breadcrumb")
+                    </div>
+                </div>
+
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT-->
+            </div>
+        </div>
+    </div>
+    
+    <!-- BEGIN FOOTER -->
+    @Html.Partial("_Layout/_Footer")
+
+    <!--[if lt IE 9]>
+       <script src="assets/plugins/respond.min.js"></script>
+       <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/admin/js_core")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/admin/js_core_app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

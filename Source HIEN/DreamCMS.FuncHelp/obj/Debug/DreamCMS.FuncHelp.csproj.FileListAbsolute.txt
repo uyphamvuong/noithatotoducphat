@@ -1,0 +1,5 @@
+D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\bin\Debug\DreamCMS.FuncHelp.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\bin\Debug\DreamCMS.FuncHelp.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.csprojResolveAssemblyReference.cache
+D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.pdb

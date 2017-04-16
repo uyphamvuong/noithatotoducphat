@@ -1,0 +1,94 @@
+﻿@using DreamCMS.ModelsAdmin
+@model DreamCMS.ModelsAdmin.LoginOrForgotPasswordModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Login | DreamCMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Login Page for use Admin Cpanel" name="description" />
+    <meta content="Uy Pham Vuong" name="author" />
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/admin/css_global")
+    @Styles.Render("~/admin/css_theme")
+    <link href="~/Areas/Admin/assets/css/pages/login-soft.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<!-- BEGIN BODY -->
+<body class="login">
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="~/Areas/Admin/assets/img/logolong.png" alt="" />
+        </a>
+    </div>
+
+    <div class="content">
+              
+        @Html.Partial("__Cms/Account/_FormLogin", Model)
+
+        @Html.Partial("__Cms/Account/_FormForgotPassword", Model)
+
+    </div>
+
+    <!-- BEGIN FOOTER -->
+    <div class="copyright">
+        @DateTime.Now.ToString("dd/MM/yyyy hh:mm") DreamCMS &copy; @DateTime.Now.Year
+    </div>
+
+    <!--[if lt IE 9]>
+       <script src="assets/plugins/respond.min.js"></script>
+       <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/admin/js_core")
+    @Scripts.Render("~/admin/js_core_app")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Areas/Admin/assets/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+    <script>
+        $('#forget-password').click(function () {
+            $('.login-form').hide();
+            $('.forget-form').show();
+        });
+
+        $('#back-btn').click(function () {
+            $('.login-form').show();
+            $('.forget-form').hide();
+        });
+
+        $('.login-form input').keypress(function (e) {
+            if (e.which == 13) {
+                if ($('.login-form').validate().form()) {
+                    $('.login-form').submit(); //form validation success, call ajax form submit
+                }
+                return false;
+            }
+        });
+
+        // Slider background
+        $.backstretch([
+                        "/Areas/Admin/assets/img/bg/1.jpg",
+                        "/Areas/Admin/assets/img/bg/2.jpg",
+                        "/Areas/Admin/assets/img/bg/3.jpg",
+                        "/Areas/Admin/assets/img/bg/4.jpg",
+                        "/Areas/Admin/assets/img/bg/5.jpg"
+        ], {
+            fade: 1000,
+            duration: 5000
+        });
+
+    </script>
+</body>
+</html>
+
