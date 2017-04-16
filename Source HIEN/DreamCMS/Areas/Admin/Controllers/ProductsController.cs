@@ -34,7 +34,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Des_,Des")] Product product)
+        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,IsKM,GroupProductId,Des_,Des")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Des_,Des")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,IsKM,GroupProductId,Des_,Des")] Product product)
         {
             if (ModelState.IsValid)
             {

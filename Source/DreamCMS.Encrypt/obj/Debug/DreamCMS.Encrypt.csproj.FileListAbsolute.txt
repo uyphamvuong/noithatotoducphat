@@ -2,3 +2,4 @@ D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.
 D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.pdb
 D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.dll
 D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.csprojResolveAssemblyReference.cache

@@ -1,7 +1,0 @@
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.dll
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.pdb
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Default.dll
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Default.pdb
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.csprojResolveAssemblyReference.cache
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.dll
-D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.pdb

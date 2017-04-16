@@ -10,6 +10,7 @@
 
     //8 sản phẩm
     List<Product> ListProduct = ViewBag.ListProduct;
+    List<Product> ListProductKM = ViewBag.ListProductKM;
 
     //6 hoạt đông
     List<Post> ListPost = ViewBag.ListPost;
@@ -17,6 +18,7 @@
     //Đối tác
     List<Partner> ListPartner = ViewBag.ListPartner;
 }
+
 
 <div class="panel panel-default panel-product">
     <div class="panel-heading">
@@ -27,7 +29,8 @@
             <div class="row">
                 @foreach (Product pd in ListProduct)
                 {
-                    <div class="col-sm-6 col-md-3">
+                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" style="color: #000000;">
+                    <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <img src="@pd.ImgUrl" alt="">
                             <div class="caption">
@@ -40,6 +43,7 @@
                             </div>
                         </div>
                     </div>
+                        </a>
                 }
             </div>
         </div>
@@ -52,22 +56,25 @@
         <div class="panel-body">
             <div class="" id="tourpackages-carousel">
                 <div class="row">
-                    @foreach (Product pd in ListProduct)
-                    { <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img src="@pd.ImgUrl" alt="">
-                        <div class="caption">
-                            <h4>@pd.ProductName</h4>
-                            <p class="des">@Html.Raw(pd.Des_)</p>
-                            <p>
-                                <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Order</a>
-                                <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                    }
-                </div>
+                    @foreach (Product pd in ListProductKM)
+                    {
+                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" style="color: #000000;">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="@pd.ImgUrl" alt="">
+                                    <div class="caption">
+                                        <h4>@pd.ProductName</h4>
+                                        <p class="des">@Html.Raw(pd.Des_)</p>
+                                        <p>
+                                            <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Order</a>
+                                            <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                            }
+</div>
             </div>
         </div>
     </div>
@@ -76,13 +83,13 @@
     @if (gt != null)
     {
     <!-- GIỚI THIỆU -->
-        <div class="well-edit well-intro">
+        @*<div class="well-edit well-intro">
             <a href="/gioi-thieu"><h4 class="h4"><span>Giới thiệu về công ty</span></h4></a>
             <p>
                 @Html.Raw(gt.Intro)
                 <a href="/gioi-thieu">Xem thêm...</a>
             </p>
-        </div>
+        </div>*@
     }
 
     @if (ListProduct.Count > 0)
@@ -111,7 +118,7 @@
     {
         Post FirstPost = ListPost[0];
     <!-- HOẠT ĐỘNG -->
-        <div class="well-edit well-event">
+        @*<div class="well-edit well-event">
             <a href="/hoat-dong"><h4 class="h4"><span>Các hoạt động</span></h4></a>
             <div class="row">
                 @for (int i = 0; i < ListPost.Count; i++)
@@ -127,13 +134,13 @@
                     </div>
                 }
             </div>
-        </div>
+        </div>*@
     }
 
     @if (ListPartner.Count > 0)
     {
     <!-- ĐỐI TÁC -->
-        <div class="well-edit well-partner">
+        @*<div class="well-edit well-partner">
             <h4 class="h4"><span>Link giới thiệu</span> <span class="prev"><</span><span class="next">></span></h4>
             <div id="owl-slider-partner">
                 @foreach (Partner pa in ListPartner)
@@ -146,7 +153,7 @@
                     </a>
                 }
             </div>
-        </div>
+        </div>*@
     }
 
 

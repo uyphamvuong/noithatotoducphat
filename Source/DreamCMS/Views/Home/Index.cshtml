@@ -57,7 +57,7 @@
                         <img src="@pd.ImgUrl" alt="">
                         <div class="caption">
                             <h4>@pd.ProductName</h4>
-                            <p class="des">@pd.Des</p>
+                            <p class="des">@Html.Raw(pd.Des)</p>
                             <p>
                                 <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Order</a>
                                 <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
@@ -87,7 +87,7 @@
     @if (ListProduct.Count > 0)
     {
     <!-- SẢN PHẨM -->
-        <div class="well-edit well-product">
+        @*<div class="well-edit well-product">
             <a href="/san-pham"><h4 class="h4"><span>Sản phẩm</span></h4></a>
             <div class="row">
                 <div class="list-product">
@@ -103,7 +103,7 @@
                     }
                 </div>
             </div>
-        </div>
+        </div>*@
     }
 
     @if (ListPost.Count > 0)
