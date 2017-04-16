@@ -31,10 +31,9 @@ namespace DreamCMS.Areas.Admin.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Des")] Product product)
+        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Intro,Keyword,Des")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -76,10 +75,9 @@ namespace DreamCMS.Areas.Admin.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Des")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Intro,Keyword,Des")] Product product)
         {
             if (ModelState.IsValid)
             {

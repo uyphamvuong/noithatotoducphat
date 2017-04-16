@@ -38,6 +38,11 @@ namespace DreamCMS.Models
         [InverseProperty("Products")]
         public GroupProduct GroupProduct { get; set; }
 
+        [Display(Name = "Mô tả ngắn")]
+        [DataType(DataType.MultilineText)]
+        [StringLength(150, MinimumLength = 3, ErrorMessage = "{0} từ {2} - {1} kí tự")]
+        public string Intro { get; set; }
+
         [Display(Name = "Từ khóa")]
         [DataType(DataType.MultilineText)]
         [StringLength(150, MinimumLength = 3, ErrorMessage = "{0} từ {2} - {1} kí tự")]
