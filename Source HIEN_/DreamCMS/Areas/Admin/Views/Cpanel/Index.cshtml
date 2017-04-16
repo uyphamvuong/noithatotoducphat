@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "DreamCMS";
+    ViewBag.Description = "CMS hỗ trợ, được phát triển trên nền tảng MVC";
+}
+
+<div class="row hover-text-decoration-none">
+
+    <div class="col-md-8">
+        @*<div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-bell-o"></i>Các hoạt động gần đây
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="scroller" style="height: 250px">
+                        <ul class="feeds">
+                            <li>
+                                <a href="#">
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-info">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc">
+                                                    Đơn hàng mới
+                                                    <span class="label label-sm label-success">
+                                                        1
+                                                    </span>
+                                                    <span class="label label-sm label-info">
+                                                        Click để xem
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col2">
+                                        <div class="date">
+                                            30 phút
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-success">
+                                                    <i class="fa fa-check"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc">
+                                                    Liên hệ đóng góp ý kiến
+                                                    <span class="label label-sm label-info ">
+                                                        2
+                                                    </span>
+                                                    <span class="label label-sm label-warning ">
+                                                        Click để xem
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col2">
+                                        <div class="date">
+                                            Vừa mới
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @*<div class="scroller-footer">
+                        <div class="pull-right">
+                            <a href="#">
+                                See All Records <i class="m-icon-swapright m-icon-gray"></i>
+                            </a>
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="dashboard-stat blue">
+                    <div class="visual">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            @ViewBag.CountIsSeenContact
+                        </div>
+                        <div class="desc">
+                            Liên hệ mới
+                        </div>
+                    </div>
+                    <a class="more" href="@Url.Action("Index","Contacts")">
+                        Xem chi tiết <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="dashboard-stat green">
+                    <div class="visual">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            @ViewBag.CountIsSeenOrder
+                        </div>
+                        <div class="desc">
+                            Lượt đặt hàng mới
+                        </div>
+                    </div>
+                    <a class="more" href="@Url.Action("Index","Orders")">
+                        Xem chi tiết <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+
+    <div class="col-md-4">
+
+        @Html.Partial("__Cms/Cpanel/_About")
+
+    </div>
+
+</div>

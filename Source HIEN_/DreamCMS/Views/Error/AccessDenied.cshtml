@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AccessDenied";
+    Layout = "~/Views/Shared/_Layout_Error.cshtml";
+}
+
+<body class="page-500-full-page">
+    <div class="row">
+        <div class="col-md-12 page-500">
+            <div class="number">
+                T.T
+            </div>
+            <div class=" details">
+                <h3>Oops! Access Denied.</h3>
+                <p>
+                    <i>@Session["ErrorHttp"]</i><br><br>
+                </p>
+
+                <p>
+                    <a href="/" class="btn btn-info btn-sm">Return home</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+

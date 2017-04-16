@@ -1,0 +1,9 @@
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.dll
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.pdb
+D:\Project\noithatotoducphat\Source\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.csprojResolveAssemblyReference.cache
+D:\Source HIEN\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.dll
+D:\Source HIEN\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.pdb
+D:\Source HIEN\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.dll
+D:\Source HIEN\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.pdb

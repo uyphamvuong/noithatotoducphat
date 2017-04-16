@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Thiết lập hệ thống";
+    ViewBag.Description = "Khởi tạo Menu, cài đặt giá trị mặc định,...";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row hover-text-decoration-none">
+
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/Admin/Config/MenuInit">
+                    <div class="well bg-blue text-center">
+                        <h2><i class="fa fa-bars" style="font-size: xx-large"></i> Tạo menu</h2>
+                        <div>Tự động khởi tạo các menu cần thiết</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="/Admin/Config/DecryptPass">
+                    <div class="well bg-green text-center">
+                        <h2><i class="fa fa-key" style="font-size: xx-large"></i> Giải mã</h2>
+                        <div>Xem password User :)</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="javascript:;">
+                    <div class="well bg-grey text-center">
+                        <h2><i class="fa fa-key" style="font-size: xx-large"></i> Chức năng khác</h2>
+                        <div>Sẽ cập nhật vào lần tới</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div> 
+
+    @Html.Partial("__Cms/Config/_Changelog")
+</div>
+

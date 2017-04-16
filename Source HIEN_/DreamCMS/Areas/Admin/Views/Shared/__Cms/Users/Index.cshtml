@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DreamCMS.ModelsAdmin.tbUser>
+
+@{
+    ViewBag.Title = "Danh sách người dùng";
+    ViewBag.Description = "Các tài khoản sử dụng cho cpanel";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Thêm người dùng", "Create", null, new { @class = "btn btn-info" })
+</p>
+
+<div class="flip-scroll">
+    <table class="table table-bordered table-striped table-condensed table-advance flip-content">
+        <thead class="flip-content">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fullname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDisable)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.AvatarUrl))
+                        {
+                            <img src="~/Areas/Admin/upload/avatar/@item.AvatarUrl" alt="@Html.DisplayFor(modelItem => item.Fullname)" width="25" height="25" />
+                        }
+                        else
+                        {
+                            <img src="~/Areas/Admin/upload/avatar/defaultavatar.png" width="25" height="25" />
+                        }
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.Raw(item.IsDisable == true ?"<span class='label label-success'>ON</span>" : "<span class='label label-danger'>OFF</span>")
+                    </td>
+                    <td>
+                        @Html.ActionLink(DTextHTML.Edit, "Edit", new { id = item.tbUserId }, new { @class = "btn btn-xs green" })
+                        @Html.ActionLink(DTextHTML.Delete, "Delete", new { id = item.tbUserId }, new { @class = "btn btn-xs red" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@using DreamCMS.ModelsAdmin
+@model DreamCMS.ModelsAdmin.tbMenuInGroup
+@{
+    if (!Model.IsIn) { return; }
+    int NumChildren = Model.tbMenu.tbMenuChildrens.Count;
+    List<tbMenuInGroup> ListMenu = new List<tbMenuInGroup>();
+    Model.tbMenu.tbMenuChildrens.Where(p => p.IsDisable == false && p.IsMenu == true).OrderBy(x => x.Order).ToList().ForEach(x => ListMenu.Add(new tbMenuInGroup(x, Model.tbGroupId))); 
+
+    //bool cat = Model.tbMenu.Controller.ToLower() == ViewBag.SBControllerName && Model.tbMenu.tbMenuParrent.MenuName == "Root" && Model.tbMenu.IsController == true;
+    bool cat = Model.tbMenu.Controller.ToLower() == ViewBag.SBControllerName && Model.tbMenu.IsController == true;
+    bool ite = Model.tbMenu.Action != null ? (Model.tbMenu.Action.ToLower() == ViewBag.SBActionName && Model.tbMenu.Controller.ToLower() == ViewBag.SBControllerName && Model.tbMenu.IsController == false) : false;
+    bool IsStart = ViewBag.SBIsStart != null ? ViewBag.SBIsStart : false;
+    bool IsLast = ViewBag.SBIsLast != null ? ViewBag.SBIsLast : false;
+    ViewBag.SBIsStart = false;
+    ViewBag.SBIsLast = false;
+}
+
+<li class="@(IsStart ? Html.Raw("start ") : Html.Raw(""))@(IsLast ? Html.Raw("last ") : Html.Raw(""))@(cat?Html.Raw("active "):Html.Raw(""))@(ite?Html.Raw("active ite "):Html.Raw(""))">
+    <a href="@(String.IsNullOrEmpty(Model.tbMenu.Area) ? "" : "/" + Model.tbMenu.Area)@(String.IsNullOrEmpty(Model.tbMenu.Controller) ? " " : "/" + Model.tbMenu.Controller)@(String.IsNullOrEmpty(Model.tbMenu.Action) ? "" : "/" + Model.tbMenu.Action)@(String.IsNullOrEmpty(Model.tbMenu.QueryString) ? "" : Model.tbMenu.QueryString)">
+        <i class="@Model.tbMenu.ClassIcon"></i>
+        <span class="title">@Model.tbMenu.MenuName</span>
+        @*@(cat ? Html.Raw("<span class='selected'></span>") : Html.Raw(""))*@
+        @if (NumChildren > 0)
+        {
+            <span class="arrow @(cat?Html.Raw("open"):Html.Raw("")) @(ite?Html.Raw("open"):Html.Raw(""))"></span>
+        }
+    </a>
+    @if (NumChildren > 0)
+    {
+        <ul class="sub-menu" @(cat? Html.Raw("style='display: block;'"):Html.Raw(""))>
+            @foreach (tbMenuInGroup m in ListMenu)
+            {
+                @Html.Partial("_Layout/__ItemMenu", m)
+            }
+        </ul>
+    }
+</li>

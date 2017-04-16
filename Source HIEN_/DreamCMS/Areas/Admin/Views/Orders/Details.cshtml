@@ -1,0 +1,86 @@
+﻿@model DreamCMS.Models.Order
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Des)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Des)
+        </dd>
+
+    </dl>
+</div>
+<table class="table table-bordered table-cart" align="center" style="text-align:center;">
+    <tr valign="middle" class="title-cart">
+        <td width="30%">Hình ảnh</td>
+        <td width="30%">Tên sản phẩm</td>
+    </tr>
+    @foreach (var item in ViewBag.sp as IEnumerable<DreamCMS.Models.OrderDetail>)
+    {
+        <tr>
+            <td>
+                <div>
+                    <img src="@item.ImgUrl" style="float:left; margin-right: 15px; margin-left: 10px; max-width: 150px; max-height: 200px;" />
+
+                </div>
+            </td>
+            <td>@HttpUtility.UrlDecode(item.ProductName)</td>
+        </tr>
+    }
+</table>
+
+
+<p>
+    @*@Html.ActionLink(DTextHTML.Delete, "Delete", new { id = Model.ContactId }, new { @class = "btn red" })*@
+    @Html.ActionLink(DTextHTML.BackList, "Index", null, new { @class = "btn btn-warning" })
+</p>
