@@ -148,6 +148,7 @@
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VideosController.cs" />
     <Compile Include="Areas\Admin\FilterConfig.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderImgsController.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Models\Partner.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Videos.cs" />
     <Compile Include="Models\_DBFrontEnd.cs" />
     <Compile Include="Areas\Admin\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -1502,6 +1504,10 @@
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\assets\plugins\locationpicker\locationpicker.jquery.min.js.map" />
+    <Content Include="Areas\Admin\Views\Videoss\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Videoss\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Videoss\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Videoss\Index.cshtml" />
     <None Include="assets\js\jquery-3.1.1.intellisense.js" />
     <Content Include="assets\js\jquery-3.1.1.js" />
     <Content Include="assets\js\jquery-3.1.1.min.js" />
@@ -1903,12 +1909,10 @@
     <Content Include="Views\Error\HttpError404.cshtml" />
     <Content Include="Views\Error\HttpError500.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ViewPages.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Shared\_Layout\_Sidebar.cshtml" />
-    <Content Include="Views\Shared\_Layout\_Slider.cshtml" />
     <Content Include="Views\Shared\_Layout_Error.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
@@ -1996,6 +2000,10 @@
     <Content Include="Views\Activity\DetailNews.cshtml" />
     <Content Include="Views\Shared\_Layout\_Leftmenu.cshtml" />
     <Content Include="Views\Shared\_Layout\_Footer.cshtml" />
+    <Content Include="Views\Activity\DetailVideo.cshtml" />
+    <Content Include="Views\Activity\IndexVideo.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout\_News_Video.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

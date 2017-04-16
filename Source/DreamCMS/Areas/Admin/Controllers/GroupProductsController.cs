@@ -36,7 +36,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Auth]
-        public ActionResult Create([Bind(Include = "GroupProductId,GroupName,SeoUrl,Order,IsDisable,ImgUrl,IdRoot,CountNode")] GroupProduct groupProduct)
+        public ActionResult Create([Bind(Include = "GroupProductId,GroupName,SeoUrl,Order,IsDisable,IsShowOnTop,ImgUrl,IdRoot,CountNode")] GroupProduct groupProduct)
         {
             List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.CountNode < 2).OrderBy(x => x.GroupName).ToList();
             ListGroupProduct.Insert(0, new GroupProduct() { GroupName = "Gốc" });
@@ -92,7 +92,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Auth]
-        public ActionResult Edit([Bind(Include = "GroupProductId,GroupName,SeoUrl,Order,IsDisable,ImgUrl,IdRoot")] GroupProduct groupProduct)
+        public ActionResult Edit([Bind(Include = "GroupProductId,GroupName,SeoUrl,Order,IsDisable,IsShowOnTop,ImgUrl,IdRoot")] GroupProduct groupProduct)
         {
             List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.CountNode < 2).OrderBy(x => x.GroupName).ToList();
             ListGroupProduct.Insert(0, new GroupProduct() { GroupName = "Gốc" });
@@ -122,6 +122,7 @@ namespace DreamCMS.Areas.Admin.Controllers
                 gp.IsDisable = groupProduct.IsDisable;
                 gp.ImgUrl = groupProduct.ImgUrl;
                 gp.IdRoot = groupProduct.IdRoot;
+                gp.IsShowOnTop = groupProduct.IsShowOnTop;
                 //db.Entry(groupProduct).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

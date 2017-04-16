@@ -18,9 +18,14 @@ namespace DreamCMS.Controllers
             ViewBag.GioiThieu = gt;
 
             // 8 sản phẩm
-            List<Product> ListProduct = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false).OrderByDescending(x => x.Order).Take(8).ToList();
+            List<Product> ListProduct = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false).OrderByDescending(x => x.Order).Take(20).ToList();
             if (ListProduct == null) { ListProduct = new List<Product>(); }
             ViewBag.ListProduct = ListProduct;
+
+            // sp khuyến mãi
+            List<Product> ListProductKM = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false && x.IsKM == true).OrderByDescending(x => x.Order).Take(20).ToList();
+            if (ListProductKM == null) { ListProductKM = new List<Product>(); }
+            ViewBag.ListProductKM = ListProductKM;
 
             // 9 hoạt động
             List<Post> ListPost = db.Posts.Where(x => x.IsDisable == false).OrderByDescending(x => x.PostId).Take(9).ToList();
@@ -29,9 +34,10 @@ namespace DreamCMS.Controllers
 
             // Đối tác
             List<Partner> ListPartner = db.Partners.ToList();
-            if (ListPartner == null) { ListPartner = new List<Partner>();}
+            if (ListPartner == null) { ListPartner = new List<Partner>(); }
             ViewBag.ListPartner = ListPartner;
 
+            //Slider Home
             List<SliderImg> ListSliderImg = db.SliderImgs.OrderByDescending(x => x.Order).ToList();
             if (ListSliderImg == null) { ListSliderImg = new List<SliderImg>(); }
             ViewBag.ListSliderImg = ListSliderImg;
@@ -50,9 +56,14 @@ namespace DreamCMS.Controllers
         }
 
         public ActionResult Contact()
-        {            
+        {
             Random newrd = new Random();
-            Session.Add("CodeAuthContact", newrd.Next(10000, 99999));
+            string CodeAuthContact = newrd.Next(10000, 99999).ToString();
+            if(Session["CodeAuthContact_Hold"]==null)
+                Session.Add("CodeAuthContact", CodeAuthContact);
+            else if (string.IsNullOrEmpty(Session["CodeAuthContact_Hold"].ToString()))
+                Session.Add("CodeAuthContact", CodeAuthContact);
+            Session.Add("CodeAuthContact_Hold", 1);
             ViewBag.IsSuccess = false;
             return View();
         }
@@ -70,7 +81,7 @@ namespace DreamCMS.Controllers
                     ViewBag.IsSuccess = false;
                     return View(contact);
                 }
-                else if(CodeAuthContact!=codeauth)
+                else if(CodeAuthContact!=codeauth.Trim())
                 {
                     ViewBag.ErrorCodeAuth = "Mã xác nhận không trùng khớp";
                     ViewBag.IsSuccess = false;
@@ -95,8 +106,9 @@ namespace DreamCMS.Controllers
                         contact.Phone,
                         contact.Content);
                     FuncHelp.DHelp.Email.SendMail(emailrc, "[BaoBiToanQuoc] #"+contact.ContactId.ToString()+" Thư từ "+contact.FullName, content);
-                }                
-                
+                }
+
+                Session.Remove("CodeAuthContact_Hold");
                 return View(contact);
             }
             ViewBag.IsSuccess = false;

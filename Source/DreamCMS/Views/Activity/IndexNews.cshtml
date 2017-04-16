@@ -9,29 +9,39 @@
 }
 
 <!-- HOẠT ĐỘNG -->
-<div class="well-edit well-event">
-    <h4 class="h4"><span>Tin tức</span></h4>
+<div class="panel panel-default panel-product">
+    <div class="panel-heading">
+        <h3 class="panel-title">TIN TỨC</h3>
+    </div>
+    <div class="panel-body">
 
-    @foreach(News po in Model)
-    {
         <div class="row">
-            <div class="col-sm-3 item-event-img">
-                <a href="/tin-tuc/@po.TitleId"><img class="img-responsive" src="@po.ImgUrl" /></a>
-            </div>
-            <div class="col-sm-9 item-event-sub">
-                <a href="/tin-tuc/@po.TitleId"><h5>@po.Title</h5></a>
-                <p>
-                    @po.Intro
-                </p>
-            </div>
-        </div>
-    }
-    
-    <nav class="text-center">
-        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+
+                    @foreach (News po in Model)
+                    {
+                        <div class="row">
+                            <div class="col-sm-3 item-event-img">
+                                <a href="/tin-tuc/@po.TitleId"><img class="img-responsive" src="@po.ImgUrl" /></a>
+                            </div>
+                            <div class="col-sm-9 item-event-sub">
+                                <a href="/tin-tuc/@po.TitleId"><h5>@po.Title</h5></a>
+                                <p>
+                                    @po.Intro
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+                    }
+
+                    <nav class="text-center">
+                        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
             .DisplayTemplate("BootstrapPagination")
             .MaxNrOfPages(7)
             .AlwaysAddFirstPageNumber()
         )
-    </nav>
-</div>
+                    </nav>
+    
+            </div>
+        </div>
+    </div>
+               

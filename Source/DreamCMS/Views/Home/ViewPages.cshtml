@@ -9,15 +9,24 @@
 @if (Model != null)
 {
     <!-- PAGE -->
-    <div class="well-edit">
-        <h4 class="h4"><span>@Model.Title</span> </h4>
-        @if (string.IsNullOrEmpty(Model.Context))
-        {
-            <h5>Thông tin đang cập nhật vui lòng quay lại sau.</h5>
-        }
-        else
-        {
-            @Html.Raw(Model.Context)
-        }
+    <div class="panel panel-default panel-product">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Model.Title</h3>
+        </div>
+        <div class="panel-body">
+            <div class="" id="tourpackages-carousel">
+                <div class="row">
+                    @if (string.IsNullOrEmpty(Model.Context))
+                    {
+                        <h5>Thông tin đang cập nhật vui lòng quay lại sau.</h5>
+                    }
+                    else
+                    {
+                        @Html.Raw(Model.Context)
+                    }
+                </div>
+               
+            </div>
+        </div>
     </div>
 }

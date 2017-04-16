@@ -33,7 +33,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Intro,Keyword,Des")] Product product)
+        public ActionResult Create([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,Price,IsDisable,IsKM,GroupProductId,Intro,Keyword,Des")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,IsDisable,GroupProductId,Intro,Keyword,Des")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId,ProductName,SeoUrl,ImgUrl,Order,Price,IsDisable,IsKM,GroupProductId,Intro,Keyword,Des")] Product product)
         {
             if (ModelState.IsValid)
             {

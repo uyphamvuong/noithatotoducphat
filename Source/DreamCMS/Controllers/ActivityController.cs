@@ -51,6 +51,23 @@ namespace DreamCMS.Controllers
             return View(news);
         }
 
+        public ActionResult IndexVideo(int? page)
+        {
+            int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            List<Videos> ListVideos = db.Videoss.Where(x => x.IsDisable == false).OrderByDescending(x => x.NewsId).ToList();
+
+            return View(ListVideos.ToPagedList(currentPageIndex, DDefault.DefaultPageSize));
+        }
+        public ActionResult DetailVideo(string titleid)
+        {
+            Videos Video = db.Videoss.Where(x => x.TitleId == titleid && x.IsDisable == false).FirstOrDefault();
+            if (Video == null)
+            {
+                return RedirectToAction("HttpError404", "Error");
+            }
+            return View(Video);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

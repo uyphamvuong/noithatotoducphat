@@ -52,6 +52,16 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.IsShowOnTop, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsShowOnTop, new { htmlAttributes = new { @class = "form-control make-switch" } })
+                    @Html.ValidationMessageFor(model => model.IsShowOnTop, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.ImgUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="input-group">

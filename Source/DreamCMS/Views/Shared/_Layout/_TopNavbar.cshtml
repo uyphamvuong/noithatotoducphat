@@ -1,5 +1,11 @@
 ﻿@using DreamCMS.Models
+@{
+    DBFrontEnd db = new DBFrontEnd();
+    List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.IsDisable == false && x.IdRoot==null && x.IsShowOnTop==true).OrderByDescending(x => x.Order).ThenBy(x => x.GroupName).ToList();
+    if (ListGroupProduct == null) { ListGroupProduct = new List<GroupProduct>(); }
 
+
+}
 <!-- Nav -->
 <nav class="navbar navbar-default navbar-home">
     <div class="container">
@@ -15,28 +21,34 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Trang chủ <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Khuyến mãi</a></li>
-                    <li><a href="#">Phim cách nhiệt</a></li>
-                    <li><a href="#">DVD-LOA-SUB</a></li>
-                    <li><a href="#">Bọc ghế da</a></li>
-                    <li><a href="#">Phủ nano</a></li>
-                    <li><a href="#">Bảo hành</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                    @*<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ÂM THANH <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>*@
+                    <li class="active"><a href="/">TRANG CHỦ <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/gioi-thieu">GIỚI THIỆU</a></li>
+                    @foreach (GroupProduct gr in ListGroupProduct)
+                    {
+                        if (gr.GroupProductChildrens.Count > 0)
+                        {
+                            <li class="dropdown">
+                                <a href="/san-pham/@gr.SeoUrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@gr.GroupName<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    @foreach (GroupProduct gc in gr.GroupProductChildrens)
+                                    {
+                                        <li><a href="/san-pham/@gc.SeoUrl">@gc.GroupName</a></li>
+                                    }
+                                </ul>
+
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
+                        }
+                    }
+                    }
+                    <li><a href="/video">VIDEOS</a></li>
+                    <li><a href="/tin-tuc">TIN TỨC</a></li>
+                    <li><a href="/lien-he">LIÊN HỆ</a></li>
                 </ul>
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </div>

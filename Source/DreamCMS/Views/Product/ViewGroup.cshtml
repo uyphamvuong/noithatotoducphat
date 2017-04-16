@@ -12,7 +12,7 @@
 }
 
 <!-- NHÓM SẢN PHẨM -->
-<div class="well-edit well-product">
+@*<div class="well-edit well-product">
     <h4 class="h4"><span>Nhóm sản phẩm</span> @gp.GroupName</h4>
     <div class="row">
         <div class="list-product">
@@ -28,7 +28,35 @@
             }
         </div>
     </div>
+</div>*@
+
+<div class="panel panel-default panel-product">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.Title</h3>
+    </div>
+    <div class="panel-body">
+        <div class="" id="tourpackages-carousel">
+            <div class="row">
+                @foreach (Product pd in Model)
+                { <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="@pd.ImgUrl" alt="">
+                        <div class="caption">
+                            <h4>@pd.ProductName</h4>
+                            <p class="des">@Html.Raw(pd.Intro)</p>
+                            <p>
+                                <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Order</a>
+                                <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <nav class="text-center">
     @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o

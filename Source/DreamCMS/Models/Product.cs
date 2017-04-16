@@ -28,8 +28,15 @@ namespace DreamCMS.Models
         [Display(Name = "Ưu tiên")]
         public int? Order { get; set; }
 
+        [Display(Name = "Giá sản phẩm")]
+        [MaxLength(20, ErrorMessage = "{0} không quá {1} kí tự")]
+        public string Price{ get; set; }
+
         [Display(Name = "Khóa sản phẩm")]
         public bool IsDisable { get; set; }
+
+        [Display(Name = "Khuyến mãi sản phẩm")]
+        public bool IsKM{ get; set; }
 
         [Display(Name = "Nhóm sản phẩm")]
         public int GroupProductId{get;set;}

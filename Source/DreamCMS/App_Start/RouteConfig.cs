@@ -13,7 +13,7 @@ namespace DreamCMS
             routes.MapRoute(
                 name: "GioiThieu",
                 url: "gioi-thieu",
-                defaults: new { controller = "Home", action = "ViewPages", titleid="gioi-thieu" }
+                defaults: new { controller = "Home", action = "ViewPages", titleid = "gioi-thieu" }
             );
 
             // Giới thiệu
@@ -49,6 +49,19 @@ namespace DreamCMS
                 defaults: new { controller = "Activity", action = "DetailNews", titleid = UrlParameter.Optional }
             );
 
+            //VIDEOS
+            routes.MapRoute(
+              name: "Videoss",
+              url: "video",
+              defaults: new { controller = "Activity", action = "IndexVideo" }
+            );
+
+            routes.MapRoute(
+                name: "VideossDetail",
+                url: "video/{titleid}",
+                defaults: new { controller = "Activity", action = "DetailVideo", titleid = UrlParameter.Optional }
+            );
+
             // sản phẩm
             routes.MapRoute(
                 name: "ProductRoot",
@@ -78,7 +91,7 @@ namespace DreamCMS
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );            
+            );
         }
     }
 }

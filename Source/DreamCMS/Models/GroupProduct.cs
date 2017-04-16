@@ -28,6 +28,9 @@ namespace DreamCMS.Models
         [Display(Name = "Khóa nhóm")]
         public bool IsDisable { get; set; }
 
+        [Display(Name = "Hiển thị Menu Top")]
+        public bool IsShowOnTop { get; set; }
+
         [Display(Name = "Link hình đại diện")]
         [Column(TypeName = "varchar")]
         [MaxLength(200, ErrorMessage = "{0} không quá {1} kí tự")]

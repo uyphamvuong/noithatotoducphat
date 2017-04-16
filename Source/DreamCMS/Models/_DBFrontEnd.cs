@@ -34,6 +34,8 @@ namespace DreamCMS.Models
 
         public DbSet<News> Newss { get; set; }
 
+        public DbSet<Videos> Videoss { get; set; }
+
         public DbSet<SliderImg> SliderImgs { get; set; }
 
         public DbSet<GroupProduct> GroupProducts { get; set; }
