@@ -1,8 +1,9 @@
 $(document).ready(function () {
+    initialize_property_map_home();
     ScrollToTop();
     StickyMenuOnTop();
     Core_revsliderHome();
-    initialize_property_map_home();
+    
 
 });
 
@@ -115,8 +116,6 @@ function Core_revsliderHome() {
 
 // Maps
 function initialize_property_map_home() {
-
-    var propertyMarkerInfoHome = { "lat": "10.7766897", "lang": "106.6319297", "icon": "img/villa-map-icon.png", "retinaIcon": "img/villa-map-icon@2x.png" };
     var url = propertyMarkerInfoHome.icon;
     var size = new google.maps.Size(42, 57);
 

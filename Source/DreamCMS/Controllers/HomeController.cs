@@ -32,6 +32,9 @@ namespace DreamCMS.Controllers
             if (ListPartner == null) { ListPartner = new List<Partner>();}
             ViewBag.ListPartner = ListPartner;
 
+            List<SliderImg> ListSliderImg = db.SliderImgs.OrderByDescending(x => x.Order).ToList();
+            if (ListSliderImg == null) { ListSliderImg = new List<SliderImg>(); }
+            ViewBag.ListSliderImg = ListSliderImg;
 
             return View();
         }

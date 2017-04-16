@@ -1,8 +1,15 @@
 ﻿@model DreamCMS.Models.SettingModel
 
 @{
+    
     ViewBag.Title = "Cài đặt hệ thống";
     ViewBag.Description = "Trang bao gồm các cài đặt mặc định cho web.";
+    string lat = "10.8230989", lng = "106.6296638";
+    if (!string.IsNullOrWhiteSpace(Model.GoogleMap))
+    {
+        string[] temp = Model.GoogleMap.Split(',');
+        lat = temp[0]; lng = temp[1];
+    }
 }
 
 @using (Html.BeginForm())
@@ -124,8 +131,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GoogleMap, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GoogleMap, new { htmlAttributes = new { @class = "form-control", rows="5" } })
+                @Html.EditorFor(model => model.GoogleMap, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
                 @Html.ValidationMessageFor(model => model.GoogleMap, "", new { @class = "text-danger" })
+                <div id="gmap_geocoding" class="gmaps"> </div>
+                <input id="gmap_geocoding_address" class="form-control" disabled />
             </div>
         </div>
 
@@ -154,6 +163,22 @@
 }
 
 @section scripts{
-    <script src="~/Areas/Admin/assets/plugins/ckeditor/ckeditor.js"></script>
-    <script src="~/Areas/Admin/assets/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAinLvd_xP78YcJfsMavbpdkPpJK6lrlLY"></script>
+<script src="~/Areas/Admin/assets/plugins/locationpicker/locationpicker.jquery.min.js"></script>
+<script src="~/Areas/Admin/assets/plugins/ckeditor/ckeditor.js"></script>
+<script src="~/Areas/Admin/assets/plugins/ckfinder/ckfinder.js"></script>
+<script>
+    $(function () {
+        $('#gmap_geocoding').locationpicker({
+            location: { latitude: @lat, longitude: @lng },
+            radius: 0,
+            inputBinding: {
+                locationNameInput: $('#gmap_geocoding_address')
+            },
+            onchanged: function (currentLocation, radius, isMarkerDropped) {
+                $('#GoogleMap').val(currentLocation.latitude + ", " + currentLocation.longitude);
+            }
+        });
+    });
+</script>
 }

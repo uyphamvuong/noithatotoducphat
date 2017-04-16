@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Order)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImgUrl)
+            <div class="thumbnail" style="max-width: 120px"><img src="@item.ImgUrl" height="50" /></div>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Link)

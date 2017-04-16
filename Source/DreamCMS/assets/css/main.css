@@ -42,6 +42,12 @@ body{
     background-color: #ed3237 !important;
     color: #fff !important;
 }
+.caption.sfl.medium_grey{
+    background-color: rgba(0,0,0,0.5)!important;
+    color:#fff!important;
+    padding:10px!important;
+    border-radius: 3px;
+}
 
 /* ======================== HEADER */
 /* Header */
@@ -91,6 +97,9 @@ body{
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
     }
+#bs-example-navbar-collapse-1 .nav>li>a{
+        text-transform:uppercase;
+}
 
 .navbar-home .active a{
     background-color: #ed3237!important;

@@ -109,7 +109,7 @@ namespace DreamCMS.Models
         [Display(Name = "Email nhận thông báo liên hệ")]
         public string EmailReceiveContact { get; set; }     
 
-        [DataType(DataType.MultilineText)]
+        [DataType(DataType.Text)]
         [Display(Name = "Ví trị Google Map")]
         public string GoogleMap { get; set; }
 

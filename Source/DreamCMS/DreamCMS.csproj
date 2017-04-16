@@ -1471,6 +1471,8 @@
     <Content Include="Areas\Admin\assets\plugins\jquery-ui\jquery-ui-1.10.3.custom.js" />
     <Content Include="Areas\Admin\assets\plugins\jquery-ui\jquery-ui-1.10.3.custom.min.css" />
     <Content Include="Areas\Admin\assets\plugins\jquery-ui\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\locationpicker\locationpicker.jquery.js" />
+    <Content Include="Areas\Admin\assets\plugins\locationpicker\locationpicker.jquery.min.js" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap\bootstrap-theme.css" />
@@ -1499,6 +1501,7 @@
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\assets\plugins\locationpicker\locationpicker.jquery.min.js.map" />
     <None Include="assets\js\jquery-3.1.1.intellisense.js" />
     <Content Include="assets\js\jquery-3.1.1.js" />
     <Content Include="assets\js\jquery-3.1.1.min.js" />
@@ -1787,6 +1790,7 @@
     <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="favicon.ico" />
     <Content Include="robots.txt" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
@@ -1912,7 +1916,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Cms\index.html" />
     <Content Include="Global.asax" />
-    <Content Include="favicon.ico" />
     <Content Include="Areas\Admin\assets\plugins\jquery-1.10.2.min.map" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1979,7 +1982,6 @@
     </Content>
     <None Include="Properties\PublishProfiles\DreamCMSPublish.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_Layout\_BottomContact.cshtml" />
     <Content Include="Views\Shared\_Layout\_TopNavbar.cshtml" />
     <Content Include="Views\Shared\_Layout\__ItemGroupProduct.cshtml" />
     <Content Include="Views\Activity\Index.cshtml" />
@@ -1992,10 +1994,8 @@
     <Content Include="Views\Shared\_Layout\_TopBanner.cshtml" />
     <Content Include="Views\Activity\IndexNews.cshtml" />
     <Content Include="Views\Activity\DetailNews.cshtml" />
-    <Content Include="Views\ShoppingCart\Index.cshtml" />
-    <Content Include="Views\ShoppingCart\menucart.cshtml" />
     <Content Include="Views\Shared\_Layout\_Leftmenu.cshtml" />
-    <Content Include="Views\Shared\_Layout\_News_Video.cshtml" />
+    <Content Include="Views\Shared\_Layout\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
