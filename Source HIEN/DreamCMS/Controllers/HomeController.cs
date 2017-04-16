@@ -18,9 +18,14 @@ namespace DreamCMS.Controllers
             ViewBag.GioiThieu = gt;
 
             // 8 sản phẩm
-            List<Product> ListProduct = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false).OrderByDescending(x => x.Order).Take(8).ToList();
+            List<Product> ListProduct = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false).OrderByDescending(x => x.Order).Take(20).ToList();
             if (ListProduct == null) { ListProduct = new List<Product>(); }
             ViewBag.ListProduct = ListProduct;
+
+            // sp khuyến mãi
+            List<Product> ListProductKM = db.Products.Include(p => p.GroupProduct).Where(x => x.IsDisable == false && x.IsKM == true).OrderByDescending(x => x.Order).Take(20).ToList();
+            if (ListProductKM == null) { ListProductKM = new List<Product>(); }
+            ViewBag.ListProductKM = ListProductKM;
 
             // 9 hoạt động
             List<Post> ListPost = db.Posts.Where(x => x.IsDisable == false).OrderByDescending(x => x.PostId).Take(9).ToList();

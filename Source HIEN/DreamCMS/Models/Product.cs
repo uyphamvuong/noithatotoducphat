@@ -31,6 +31,9 @@ namespace DreamCMS.Models
         [Display(Name = "Khóa sản phẩm")]
         public bool IsDisable { get; set; }
 
+        [Display(Name = "Khuyến mãi sản phẩm")]
+        public bool IsKM{ get; set; }
+
         [Display(Name = "Nhóm sản phẩm")]
         public int GroupProductId{get;set;}
 

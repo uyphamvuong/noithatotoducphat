@@ -152,7 +152,7 @@ body{
         padding: 0;
     }
 .panel-product .caption h4{
-    height: 60px;
+    height: auto;
     font-family: 'Montserrat', sans-serif;
 }
 .panel-product .caption p.des{
