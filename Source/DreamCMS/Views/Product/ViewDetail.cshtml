@@ -9,41 +9,29 @@
     ViewBag.ImageUrl = Model.ImgUrl;
 
     List<Product> ListProduct = ViewBag.ListProduct;
-    
+
 }
-@*<script>
-    function AddToCart(id) {
-        $.post("/ShoppingCart/AddToCart", { "id": id },
-        function (data) {
-            if (data.Code == '0') {
-                alert('Thêm sản phẩm vào giỏ hàng thành công');
-            }
-            $('.menu-cart a').text('Giỏ hàng('+data.Dem+')');
-            
-        });
-        return false;
-    }
-</script>*@
+
 <!-- SẢN PHẨM -->
-<div class="well-edit well-product">
-    <h4 class="h4"><span>Sản phẩm</span> @Model.ProductName </h4>
+<div class="panel panel-news">
+    <div class="panel-heading"><a href="/lien-he" style="color:#ed3237">@Model.ProductName</a></div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <img class="img-responsive img-thumbnail" src="@Model.ImgUrl" />
             <div class="form-group">
-               
-                    <br />
-               <input onclick="AddToCart(@Model.ProductId);" type="button" value="ĐẶT HÀNG" class="btn btn-success hidden" />
-                    @*<a href="@Url.Action("Cart", "Product", new { Id = @Model.ProductId})" class="btn btn-success">ĐẶT HÀNG</a>*@
+
+                <br />
+                <input onclick="AddToCart(@Model.ProductId);" type="button" value="ĐẶT HÀNG" class="btn btn-success hidden" />
+                @*<a href="@Url.Action("Cart", "Product", new { Id = @Model.ProductId})" class="btn btn-success">ĐẶT HÀNG</a>*@
                 @*<a class="btn btn-success btn-contact-buy" href="/lien-he">LIÊN HỆ</a>*@
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="addthis_native_toolbox"></div>
             @Html.Raw(Model.Des)
         </div>
 
-    </div>       
+    </div>
 </div>
 
 @if (ListProduct.Count > 0)
@@ -56,48 +44,52 @@
             <div class="" id="tourpackages-carousel">
                 <div class="row">
                     @foreach (Product pd in ListProduct)
-                    { <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="@pd.ImgUrl" alt="">
-                            <div class="caption">
-                                <h4>@pd.ProductName</h4>
-                                <p class="des">@Html.Raw(pd.Intro)</p>
-                                <p>
-                                    <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
-                                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
-                                </p>
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                            <div class="thumbnail">
+                                <a class="a-img-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName">
+                                    <div class="img-product" style="background: #fff url('@pd.ImgUrl');"></div>
+                                    <img src="@pd.ImgUrl" class="hidden" alt="@pd.ProductName">
+                                </a>
+                                <div class="caption">
+                                    <a class="title-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName"><h4>@pd.ProductName</h4></a>
+                                    <p class="des">@Html.Raw(pd.Intro)</p>
+                                    <div class="row-price-product">
+                                        <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
+                                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button" title="@pd.ProductName">Chi tiết</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     }
                 </div>
             </div>
         </div>
     </div>
     @*<div class="well-edit">
-        <a href="/san-pham/@Model.GroupProduct.SeoUrl"><h4 class="h4">Sản phẩm cùng nhóm "@Model.GroupProduct.GroupName"</h4></a>
-        <div class="row">
-            <div class="list-product">
-                @foreach (Product pd in ListProduct)
-                {
-                    <div class="item-product">
-                        <div class="item-product-img">
-                            <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><img src="@pd.ImgUrl" alt="@pd.ProductName" /></a>
+            <a href="/san-pham/@Model.GroupProduct.SeoUrl"><h4 class="h4">Sản phẩm cùng nhóm "@Model.GroupProduct.GroupName"</h4></a>
+            <div class="row">
+                <div class="list-product">
+                    @foreach (Product pd in ListProduct)
+                    {
+                        <div class="item-product">
+                            <div class="item-product-img">
+                                <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><img src="@pd.ImgUrl" alt="@pd.ProductName" /></a>
+                            </div>
+                            <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><h5>@pd.ProductName</h5></a>
+                            <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><span class="view-more">Xem chi tiết</span></a>
                         </div>
-                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><h5>@pd.ProductName</h5></a>
-                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl"><span class="view-more">Xem chi tiết</span></a>
-                    </div>
-                }
+                    }
+                </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 }
 
 
 <div class="clearfix" style="height: 20px;"></div>
 <div style="overflow: hidden">
     <div class="fb-comments" data-href="http://www.baobitoanquoc.net@(Html.Raw(Request.RawUrl))" style="width: 100%" data-numposts="5" data-colorscheme="light"></div>
-</div> 
+</div>
 
 @section scripts{
 
@@ -105,11 +97,11 @@
 
     <div id="fb-root"></div>
     <script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 }

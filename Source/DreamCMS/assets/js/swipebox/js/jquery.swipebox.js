@@ -78,8 +78,6 @@
 
 			    $(document).on('click', selector, function (event) {
 
-			        alert('sdsd');
-
 					// console.log( isTouch );
 
 					if ( event.target.parentNode.className === 'slide current' ) {
