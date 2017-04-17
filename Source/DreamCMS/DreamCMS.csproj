@@ -1513,6 +1513,8 @@
     <Content Include="assets\js\jquery-3.1.1.min.js" />
     <Content Include="assets\js\jquery-3.1.1.slim.js" />
     <Content Include="assets\js\jquery-3.1.1.slim.min.js" />
+    <Content Include="assets\js\jquery-migrate-1.2.1.js" />
+    <Content Include="assets\js\jquery.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\nivoslider\jquery.nivo.slider.js" />
@@ -1791,6 +1793,13 @@
     <Content Include="Areas\Admin\Views\Partners\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Partners\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Partners\Index.cshtml" />
+    <Content Include="assets\js\swipebox\css\swipebox.css" />
+    <Content Include="assets\js\swipebox\css\swipebox.min.css" />
+    <Content Include="assets\js\swipebox\img\icons.png" />
+    <Content Include="assets\js\swipebox\img\icons.svg" />
+    <Content Include="assets\js\swipebox\img\loader.gif" />
+    <Content Include="assets\js\swipebox\js\jquery.swipebox.js" />
+    <Content Include="assets\js\swipebox\js\jquery.swipebox.min.js" />
     <Content Include="assets\plugins\font-awesome\css\font-awesome.css" />
     <Content Include="assets\plugins\font-awesome\css\font-awesome.min.css" />
     <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -1804,6 +1813,36 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\js\jquery-3.1.1.min.map" />
     <Content Include="assets\js\jquery-3.1.1.slim.min.map" />
+    <Content Include="Upload\images\news\dscf2887-1492245551530-216-0-1365-2046-crop-1492245834009.jpg" />
+    <Content Include="Upload\images\news\sieu-xe-lamborghini-huracan-ma-crom-2-1492227496561-105-0-643-960-crop-1492227543838.jpg" />
+    <Content Include="Upload\images\project\bugatti-veyron-super-sport-xl.jpg" />
+    <Content Include="Upload\images\project\ferrari-enzo.jpg" />
+    <Content Include="Upload\images\project\Koenigsegg -Agera-R.jpg" />
+    <Content Include="Upload\images\project\Lamborghini-Reventon.jpg" />
+    <Content Include="Upload\images\project\phim-cach-nhiet-o-to-vnemart-nexfil.jpg" />
+    <Content Include="Upload\images\slider\2.jpg" />
+    <Content Include="Upload\images\slider\anh1.png" />
+    <Content Include="Upload\images\slider\maxresdefault.jpg" />
+    <Content Include="Upload\images\slider\Pagani-Huayra_01.jpg" />
+    <Content Include="Upload\images\web\big-logo.png" />
+    <Content Include="Upload\images\web\logo.png" />
+    <Content Include="Upload\images\web\villa-map-icon%402x.png" />
+    <Content Include="Upload\images\web\villa-map-icon.png" />
+    <Content Include="Upload\_thumbs\Images\news\dscf2887-1492245551530-216-0-1365-2046-crop-1492245834009.jpg" />
+    <Content Include="Upload\_thumbs\Images\news\sieu-xe-lamborghini-huracan-ma-crom-2-1492227496561-105-0-643-960-crop-1492227543838.jpg" />
+    <Content Include="Upload\_thumbs\Images\project\bugatti-veyron-super-sport-xl.jpg" />
+    <Content Include="Upload\_thumbs\Images\project\ferrari-enzo.jpg" />
+    <Content Include="Upload\_thumbs\Images\project\Koenigsegg -Agera-R.jpg" />
+    <Content Include="Upload\_thumbs\Images\project\Lamborghini-Reventon.jpg" />
+    <Content Include="Upload\_thumbs\Images\project\phim-cach-nhiet-o-to-vnemart-nexfil.jpg" />
+    <Content Include="Upload\_thumbs\Images\slider\2.jpg" />
+    <Content Include="Upload\_thumbs\Images\slider\anh1.png" />
+    <Content Include="Upload\_thumbs\Images\slider\maxresdefault.jpg" />
+    <Content Include="Upload\_thumbs\Images\slider\Pagani-Huayra_01.jpg" />
+    <Content Include="Upload\_thumbs\Images\web\big-logo.png" />
+    <Content Include="Upload\_thumbs\Images\web\logo.png" />
+    <Content Include="Upload\_thumbs\Images\web\villa-map-icon%402x.png" />
+    <Content Include="Upload\_thumbs\Images\web\villa-map-icon.png" />
     <Content Include="Views\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Contacts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Contacts\Details.cshtml" />
@@ -1984,6 +2023,9 @@
     <Content Include="assets\js\respond.min.js.map">
       <DependentUpon>respond.min.js</DependentUpon>
     </Content>
+    <Content Include="assets\js\swipebox\js\jquery.swipebox.min.js.map">
+      <DependentUpon>jquery.swipebox.min.js</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\DreamCMSPublish.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Layout\_TopNavbar.cshtml" />
@@ -2013,13 +2055,9 @@
     <Folder Include="Upload\images\banner\" />
     <Folder Include="Upload\images\flag\" />
     <Folder Include="Upload\images\groupproduct\" />
-    <Folder Include="Upload\images\news\" />
     <Folder Include="Upload\images\page\" />
     <Folder Include="Upload\images\partner\" />
     <Folder Include="Upload\images\post\" />
-    <Folder Include="Upload\images\project\" />
-    <Folder Include="Upload\images\slider\" />
-    <Folder Include="Upload\images\web\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

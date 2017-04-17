@@ -3,8 +3,10 @@ $(document).ready(function () {
     ScrollToTop();
     StickyMenuOnTop();
     Core_revsliderHome();
-    
-
+    if ($('.body-activity').length > 0) {
+        Core_AutoResizeImgBodyContext();
+        Core_AutoAddSwipeBoxBodyContext();
+    };
 });
 
 // Scroll To Top
@@ -149,3 +151,32 @@ function initialize_property_map_home() {
         icon: image
     });
 }
+
+function Core_AutoResizeImgBodyContext() {
+    //body-activity
+    var wm = $('.body-activity').width();
+    $('.body-activity img').each(function (i, v) {
+        $(this).css({ height: 'auto' });
+        if (wm < $(this).width())
+            $(this).css({ width: '100%', height: 'auto', max_width: 'auto' });
+    });
+    $('.body-activity div, .body-activity table').each(function (i, v) {
+        if (wm < $(this).width())
+            $(this).css({ width: '100%' });
+    });
+};
+
+function Core_AutoAddSwipeBoxBodyContext() {
+    $('.body-activity img').each(function (i, v) {
+        if ($(this).parent().prop("tagName") == 'A') {
+
+        }
+        else {
+            var htmlt = $("<div />").append($(this).clone()).html();
+            var imgurl = $(this).attr('src');
+            var title = $(this).attr('alt');
+            $(this).replaceWith('<a href="' + imgurl + '" class="swipebox-body-activity" title="' + title + '">' + htmlt + '</a>');
+        }
+    });
+    $('.swipebox-body-activity').swipebox();
+};

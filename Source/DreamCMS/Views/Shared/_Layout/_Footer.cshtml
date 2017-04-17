@@ -4,7 +4,7 @@
 <footer>
     <div class="container" style="margin-bottom: 3vh">
         <div class="row">
-            <div class="col-md-4 col-sm-6 footerleft ">
+            <div class="col-md-4 col-sm-12 footerleft ">
                 @Html.Raw(Setting.Get("BottomContact"))
             </div>
             <!--<div class="col-md-2 col-sm-6 paddingtop-bottom">
@@ -19,12 +19,12 @@
                     <li><a href="#"> Frequently Ask Questions</a></li>
                 </ul>
             </div>-->
-            <div class="col-md-4 col-sm-6 paddingtop-bottom">
+            <div class="col-md-4 col-sm-6 footer-map">
                 <div class="post">
                     <div id="property_map_home" style="width:100%;height:300px;"></div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 paddingtop-bottom">
+            <div class="col-md-4 col-sm-6 footer-fanpage">
                 <iframe src="https://www.facebook.com/plugins/page.php?href=@Html.Encode(Setting.Get("FacebookFanpage"))&tabs=timeline&width=340&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" height="300" style="border:none;overflow:hidden;width:100%" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
             </div>
         </div>

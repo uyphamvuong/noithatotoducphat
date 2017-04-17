@@ -1,10 +1,42 @@
-@media only screen and (min-width: 900px) {
-    
+@media only screen and (max-width: 1200px) and (min-width: 901px){
+    .slogan h1 {
+        font-size:44px;
+    }
 }
-@media only screen and (max-width: 768px) {
-    .navbar-home .logo-scroll {
-        visibility: hidden;
-    }  
+@media only screen and (max-width: 900px) {
+    .slogan h1 {
+        font-size:36px;
+    }
+    .slogan p {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .panel-product .thumbnail {
+        height: auto;
+    }
+    .panel-product .row-price-product {
+        position: relative;
+        bottom:0;
+    }
+    .footer-map{
+        margin-bottom: 20px;
+    }
+    .img-logo {
+        max-width: 200px;
+    }
+    .header .slogan{
+        padding: 0 15px;
+    }
+    .header .logo {
+        display: inline-block;
+        width: 100%;
+        height: 180px;
+        overflow:hidden;
+    }
+    .slogan h1{
+        padding-top:0;
+    }
 }
 @media only screen and (max-width: 900px) and (min-width: 768px){
 

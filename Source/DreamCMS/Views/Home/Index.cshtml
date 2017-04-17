@@ -61,21 +61,22 @@
             <div class="row">
                 @foreach (Product pd in ListProduct)
                 {
-                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" style="color: #000000;">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="@pd.ImgUrl" alt="">
-                                <div class="caption">
-                                    <h4>@pd.ProductName</h4>
-                                    <p class="des">@Html.Raw(pd.Intro)</p>
-                                    <p>
-                                        <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
-                                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
-                                    </p>
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="thumbnail">
+                            <a class="a-img-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName">
+                                <div class="img-product" style="background: #fff url('@pd.ImgUrl');"></div>
+                                <img src="@pd.ImgUrl" class="hidden" alt="@pd.ProductName">
+                            </a>
+                            <div class="caption">
+                                <a class="title-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName"><h4>@pd.ProductName</h4></a>
+                                <p class="des">@Html.Raw(pd.Intro)</p>
+                                <div class="row-price-product">
+                                    <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
+                                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button" title="@pd.ProductName">Chi tiết</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 }
             </div>
         </div>
@@ -91,21 +92,22 @@
             <div class="row">
                 @foreach (Product pd in ListProductKM)
                 {
-                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" style="color: #000000;">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="@pd.ImgUrl" alt="">
-                                <div class="caption">
-                                    <h4>@pd.ProductName</h4>
-                                    <p class="des">@Html.Raw(pd.Intro)</p>
-                                    <p>
-                                        <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
-                                        <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button">Chi tiết</a>
-                                    </p>
-                                </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a class="a-img-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName">
+                                <div class="img-product" style="background: #fff url('@pd.ImgUrl');"></div>
+                                <img src="@pd.ImgUrl" class="hidden" alt="@pd.ProductName">
+                            </a>
+                            <div class="caption">
+                                <a class="title-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName"><h4>@pd.ProductName</h4></a>
+                                <p class="des">@Html.Raw(pd.Intro)</p>
+                                <p>
+                                    <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
+                                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button" title="@pd.ProductName">Chi tiết</a>
+                                </p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 }
             </div>
         </div>
