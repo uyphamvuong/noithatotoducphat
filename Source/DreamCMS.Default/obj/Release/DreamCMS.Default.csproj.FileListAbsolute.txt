@@ -1,0 +1,4 @@
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Default\bin\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Default\bin\Release\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Default\obj\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Default\obj\Release\DreamCMS.Default.pdb

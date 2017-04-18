@@ -1,0 +1,53 @@
+﻿@using DreamCMS.Models
+@using MvcPaging
+@model IPagedList<Product>
+
+@{
+    GroupProduct gp = ViewBag.GroupProduct;
+    ViewBag.Title = gp.GroupName;
+    ViewBag.Description = "Các sản phẩm thuộc công ty,...";
+    ViewBag.Keywords = "sản phẩm, danh sách, công ty";
+    ViewBag.CategoryName = gp.GroupName;
+    ViewBag.ImageUrl = gp.ImgUrl;
+}
+
+<!-- NHÓM SẢN PHẨM -->
+<div class="panel panel-default panel-product">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.Title</h3>
+    </div>
+    <div class="panel-body">
+        <div class="" id="tourpackages-carousel">
+            <div class="row">
+                @foreach (Product pd in Model)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="thumbnail">
+                            <a class="a-img-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName">
+                                <div class="img-product" style="background: #fff url('@pd.ImgUrl');"></div>
+                                <img src="@pd.ImgUrl" class="hidden" alt="@pd.ProductName">
+                            </a>
+                            <div class="caption">
+                                <a class="title-product" href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" title="@pd.ProductName"><h4>@pd.ProductName</h4></a>
+                                <p class="des">@Html.Raw(pd.Intro)</p>
+                                <div class="row-price-product">
+                                    <a href="#" class="btn btn-info btn-xs" role="button">Giá : @pd.Price</a>
+                                    <a href="/san-pham/@pd.GroupProduct.SeoUrl/@pd.SeoUrl" class="btn btn-default btn-xs" role="button" title="@pd.ProductName">Chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<nav class="text-center">
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+            .DisplayTemplate("BootstrapPagination")
+            .MaxNrOfPages(DDefault.DefaultPageSize)
+            .AlwaysAddFirstPageNumber()
+        )
+</nav>

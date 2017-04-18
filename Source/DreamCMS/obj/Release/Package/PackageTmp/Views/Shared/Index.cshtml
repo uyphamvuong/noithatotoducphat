@@ -1,0 +1,4 @@
+﻿@{
+    Session["ErrorHttp"] = Request.Path;
+    Response.Redirect("~/Error/HttpError404");
+}

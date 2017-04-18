@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace DreamCMS.Areas.Admin.Controllers
 {
-    public class VideossController : Controller
+    public class VideosController : Controller
     {
         private DBFrontEnd db = new DBFrontEnd();
 
@@ -15,7 +15,7 @@ namespace DreamCMS.Areas.Admin.Controllers
         [Auth]
         public ActionResult Index()
         {
-            return View(db.Videoss.ToList());
+            return View(db.Videos.ToList());
         }
 
         // GET: Admin/Videoss/Create
@@ -32,18 +32,23 @@ namespace DreamCMS.Areas.Admin.Controllers
         //[ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Create([Bind(Include = "NewsId,Title,TitleId,Intro,Keyword,Link,Context,IsDisable,ImgUrl")] Videos Videos)
+        public ActionResult Create([Bind(Include = "VideoId,Title,TitleId,Intro,Keyword,Link,Context,IsDisable,ImgUrl,IdText")] Video Videos)
         {
             if (ModelState.IsValid)
             {
                 if (Videos.TitleId == null) { Videos.TitleId = DreamCMS.FuncHelp.DHelp.SEOurl(Videos.Title); }
-                if (db.Videoss.Where(x => x.TitleId == Videos.TitleId).FirstOrDefault() != null)
+                if (db.Videos.Where(x => x.TitleId == Videos.TitleId).FirstOrDefault() != null)
                 {
                     ViewBag.IsValidName = "Tên bài viết đã được sử dụng!!!";
                     return View(Videos);
                 }
 
-                db.Videoss.Add(Videos);
+                if (!string.IsNullOrEmpty(Videos.Link))
+                    Videos.IdText = Videos.Link.Substring(Videos.Link.IndexOf("?v=") + 3, Videos.Link.Length - Videos.Link.IndexOf("?v=") - 3);
+                if (string.IsNullOrEmpty(Videos.ImgUrl))
+                    Videos.ImgUrl = "https://img.youtube.com/vi/" + Videos.IdText + "/mqdefault.jpg";
+
+                db.Videos.Add(Videos);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,7 +64,7 @@ namespace DreamCMS.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Videos Videos = db.Videoss.Find(id);
+            Video Videos = db.Videos.Find(id);
             if (Videos == null)
             {
                 return HttpNotFound();
@@ -74,16 +79,20 @@ namespace DreamCMS.Areas.Admin.Controllers
         //[ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [Auth]
-        public ActionResult Edit([Bind(Include = "NewsId,Title,TitleId,Intro,Keyword,Context,Link,IsDisable,ImgUrl")] Videos Videos)
+        public ActionResult Edit([Bind(Include = "VideoId,Title,TitleId,Intro,Keyword,Context,Link,IsDisable,ImgUrl,IdText")] Video Videos)
         {
             if (ModelState.IsValid)
             {
                 if (Videos.TitleId == null) { Videos.TitleId = DreamCMS.FuncHelp.DHelp.SEOurl(Videos.Title); }
-                if (db.Videoss.Where(x => x.TitleId == Videos.TitleId && x.NewsId != Videos.NewsId).FirstOrDefault() != null)
+                if (db.Videos.Where(x => x.TitleId == Videos.TitleId && x.VideoId != Videos.VideoId).FirstOrDefault() != null)
                 {
                     ViewBag.IsValidName = "Tên bài viết đã được sử dụng!!!";
                     return View(Videos);
                 }
+                if (!string.IsNullOrEmpty(Videos.Link))
+                    Videos.IdText = Videos.Link.Substring(Videos.Link.IndexOf("?v=") + 3, Videos.Link.Length - Videos.Link.IndexOf("?v=") - 3);
+                if (string.IsNullOrEmpty(Videos.ImgUrl))
+                    Videos.ImgUrl = "https://img.youtube.com/vi/" + Videos.IdText + "/mqdefault.jpg";                 
 
                 db.Entry(Videos).State = EntityState.Modified;
                 db.SaveChanges();
@@ -100,7 +109,7 @@ namespace DreamCMS.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Videos Videos = db.Videoss.Find(id);
+            Video Videos = db.Videos.Find(id);
             if (Videos == null)
             {
                 return HttpNotFound();
@@ -114,8 +123,8 @@ namespace DreamCMS.Areas.Admin.Controllers
         [Auth(IsNotLayout = true)]
         public ActionResult DeleteConfirmed(int id)
         {
-            Videos Videos = db.Videoss.Find(id);
-            db.Videoss.Remove(Videos);
+            Video Videos = db.Videos.Find(id);
+            db.Videos.Remove(Videos);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,12 @@
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\DreamCMS.Aibiet.dll.config
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\DreamCMS.Aibiet.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\DreamCMS.Aibiet.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\EntityFramework.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\EntityFramework.SqlServer.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\EntityFramework.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Release\EntityFramework.SqlServer.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Release\DreamCMS.ModelsAdmin.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Release\DreamCMS.Aibiet.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Release\DreamCMS.Aibiet.pdb

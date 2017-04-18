@@ -7,6 +7,8 @@ $(document).ready(function () {
         Core_AutoResizeImgBodyContext();
         Core_AutoAddSwipeBoxBodyContext();
     };
+    Core_UserOnline();
+    $("#video-iframe").fitVids();
 });
 
 // Scroll To Top
@@ -180,3 +182,19 @@ function Core_AutoAddSwipeBoxBodyContext() {
     });
     $('.swipebox-body-activity').swipebox();
 };
+
+function Core_UserOnline () {
+    // Reference the auto-generated proxy for the hub.  
+    var userActivity = $.connection.userActivityHub;
+    // Create a function that the hub can call back to display messages.
+    userActivity.client.updateUsersOnlineCount = function (ds) {
+        // Add the message to the page. 
+        $('#usersCount').text(ds.CurrentOnline);
+        if (ds.RefreshData) {
+            $('#Count_DayView').text(ds.Count_DayView);
+            $('#Count_MonthView').text(ds.Count_MonthView);
+            $('#Count_TotalView').text(ds.Count_TotalView);
+        }                 
+    };
+    $.connection.hub.start({ transport: 'longPolling' });
+}

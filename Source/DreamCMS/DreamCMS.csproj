@@ -57,7 +57,27 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MinifierLibrary">
       <HintPath>..\packages\MinifierLibrary.1.0.3\lib\net45\MinifierLibrary.dll</HintPath>
     </Reference>
@@ -67,6 +87,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -153,6 +177,7 @@
     <Compile Include="Areas\Admin\Controllers\ContactsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderImgsController.cs" />
     <Compile Include="Cms\Migrations\Configuration.cs" />
+    <Compile Include="Cms\SignalR\UsersOnline.cs" />
     <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Models\Order.cs" />
@@ -181,6 +206,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\assets\css\animate.css" />
@@ -1504,11 +1530,13 @@
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\assets\plugins\locationpicker\locationpicker.jquery.min.js.map" />
-    <Content Include="Areas\Admin\Views\Videoss\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Videoss\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Videoss\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Videoss\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Videos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Videos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Videos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Videos\Index.cshtml" />
     <None Include="assets\js\jquery-3.1.1.intellisense.js" />
+    <Content Include="assets\js\flexisel\css\style.css" />
+    <Content Include="assets\js\flexisel\js\jquery.flexisel.js" />
     <Content Include="assets\js\jquery-3.1.1.js" />
     <Content Include="assets\js\jquery-3.1.1.min.js" />
     <Content Include="assets\js\jquery-3.1.1.slim.js" />
@@ -1813,6 +1841,8 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="assets\js\jquery-3.1.1.min.map" />
     <Content Include="assets\js\jquery-3.1.1.slim.min.map" />
+    <Content Include="assets\js\jquery.signalR-2.2.1.js" />
+    <Content Include="assets\js\jquery.signalR-2.2.1.min.js" />
     <Content Include="Upload\images\news\dscf2887-1492245551530-216-0-1365-2046-crop-1492245834009.jpg" />
     <Content Include="Upload\images\news\sieu-xe-lamborghini-huracan-ma-crom-2-1492227496561-105-0-643-960-crop-1492227543838.jpg" />
     <Content Include="Upload\images\project\bugatti-veyron-super-sport-xl.jpg" />
@@ -2058,6 +2088,7 @@
     <Folder Include="Upload\images\page\" />
     <Folder Include="Upload\images\partner\" />
     <Folder Include="Upload\images\post\" />
+    <Folder Include="Views\UsersOnline\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

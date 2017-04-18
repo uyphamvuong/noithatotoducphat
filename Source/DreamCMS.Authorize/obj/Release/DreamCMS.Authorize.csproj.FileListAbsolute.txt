@@ -1,0 +1,16 @@
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Authorize.dll.config
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Authorize.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Authorize.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Aibiet.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Encrypt.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\EntityFramework.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\EntityFramework.SqlServer.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Encrypt.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\DreamCMS.Aibiet.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\EntityFramework.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\bin\Release\EntityFramework.SqlServer.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\obj\Release\DreamCMS.Authorize.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\obj\Release\DreamCMS.Authorize.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Authorize\obj\Release\DreamCMS.Authorize.pdb

@@ -54,13 +54,13 @@ namespace DreamCMS.Controllers
         public ActionResult IndexVideo(int? page)
         {
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
-            List<Videos> ListVideos = db.Videoss.Where(x => x.IsDisable == false).OrderByDescending(x => x.NewsId).ToList();
+            List<Video> ListVideos = db.Videos.Where(x => x.IsDisable == false).OrderByDescending(x => x.VideoId).ToList();
 
             return View(ListVideos.ToPagedList(currentPageIndex, DDefault.DefaultPageSize));
         }
         public ActionResult DetailVideo(string titleid)
         {
-            Videos Video = db.Videoss.Where(x => x.TitleId == titleid && x.IsDisable == false).FirstOrDefault();
+            Video Video = db.Videos.Where(x => x.TitleId == titleid && x.IsDisable == false).FirstOrDefault();
             if (Video == null)
             {
                 return RedirectToAction("HttpError404", "Error");

@@ -1,0 +1,7 @@
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Release\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Release\DreamCMS.Upload.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Release\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Release\DreamCMS.Upload.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Release\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Release\DreamCMS.Upload.pdb

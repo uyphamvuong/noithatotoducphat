@@ -1,0 +1,48 @@
+﻿@using DreamCMS.Models
+@using MvcPaging
+@model IPagedList<Videos>
+
+@{
+    ViewBag.Title = "Danh sách các video";
+    ViewBag.Description = "Video là tin về ngành nội thất ô tô, tin nổi bật,...";
+    ViewBag.Keywords = "tin tức, danh sách, công ty";
+}
+
+<!-- HOẠT ĐỘNG -->
+<div class="panel panel-default panel-page-blank">
+    <div class="panel-heading">
+        <h3 class="panel-title">VIDEO</h3>
+    </div>
+    <div class="panel-body">
+        @foreach (Videos po in Model)
+        {
+            <div class="row">
+                <div class="col-sm-4 item-event-img">
+                    <a href="/video/@po.TitleId" class="thumbnail">
+                        <img class="img-responsive" src="@po.ImgUrl" />
+                    </a>
+                </div>
+                <div class="col-sm-8 item-event-sub">
+                    <a href="/video/@po.TitleId"><h5>@po.Title</h5></a>
+                    <p>
+                        @po.Intro
+                    </p>
+                </div>
+            </div>
+            <br />
+        }
+        <nav class="text-center">
+            @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+            .DisplayTemplate("BootstrapPagination")
+            .MaxNrOfPages(DDefault.DefaultPageSize)
+            .AlwaysAddFirstPageNumber()
+        )
+        </nav>
+    </div>
+</div>
+
+
+
+
+
+

@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DreamCMS.Models
 {
-    [Table("Videos")]
-    public class Videos
+    [Table("Video")]
+    public class Video
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [ScaffoldColumn(true)]
-        public int NewsId { get; set; }
+        public int VideoId { get; set; }
 
         [Required(ErrorMessage = "{0} không được để trống!")]
         [DataType(DataType.Text)]
@@ -46,6 +46,10 @@ namespace DreamCMS.Models
         [Column(TypeName = "varchar")]
         [MaxLength(200, ErrorMessage = "{0} không quá {1} kí tự")]
         public string ImgUrl { get; set; }
+
+        [Display(Name = "IdText")]
+        [Column(TypeName = "varchar")]
+        public string IdText { get; set; }
 
         [Display(Name = "Khóa nội dung")]
         public bool IsDisable { get; set; }

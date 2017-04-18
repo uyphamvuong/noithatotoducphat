@@ -1,0 +1,13 @@
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Config.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Config.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Encrypt.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\EntityFramework.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\EntityFramework.SqlServer.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\DreamCMS.Encrypt.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\EntityFramework.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\bin\Release\EntityFramework.SqlServer.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\obj\Release\DreamCMS.Config.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\obj\Release\DreamCMS.Config.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Config\obj\Release\DreamCMS.Config.pdb

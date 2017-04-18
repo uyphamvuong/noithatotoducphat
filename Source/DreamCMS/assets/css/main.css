@@ -61,6 +61,16 @@ body{
     user-select: none !important;
     letter-spacing: 5px;
 }
+#usersCount{
+    display: inline-block;
+    color: #ed3237;
+}
+#web-right{
+    float:right;
+}
+.navbar-brand{
+    display:none;
+}
 
 /* ======================== HEADER */
 /* Header */
@@ -95,6 +105,18 @@ body{
 .img-logo {
     width: 90%;
 }
+/* Video */
+.dvc img{
+    width: 85px;
+    height: 70px;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.dvc li{
+    list-style: none;
+    display: inline-block;
+}
+
 /* Navbar */
 .navbar-home{
     background-color: #333;

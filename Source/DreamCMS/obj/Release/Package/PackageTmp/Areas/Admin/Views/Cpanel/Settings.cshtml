@@ -1,0 +1,184 @@
+﻿@model DreamCMS.Models.SettingModel
+
+@{
+    
+    ViewBag.Title = "Cài đặt hệ thống";
+    ViewBag.Description = "Trang bao gồm các cài đặt mặc định cho web.";
+    string lat = "10.8230989", lng = "106.6296638";
+    if (!string.IsNullOrWhiteSpace(Model.GoogleMap))
+    {
+        string[] temp = Model.GoogleMap.Split(',');
+        lat = temp[0]; lng = temp[1];
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @if (ViewBag.IsSuccess)
+        {
+            <div class="alert alert-success">@Model.ErrorMessage</div>
+        }
+        else if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-success">@Model.ErrorMessage</div>
+        }
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TopContact, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TopContact, new { htmlAttributes = new { @class = "form-control ckeditor" } })
+                @Html.ValidationMessageFor(model => model.TopContact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BottomContact, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BottomContact, new { htmlAttributes = new { @class = "form-control ckeditor" } })
+                @Html.ValidationMessageFor(model => model.BottomContact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BackgroundWebUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.BackgroundWebUrl, new { htmlAttributes = new { @class = "form-control textA" } })
+                    <span class="input-group-btn">
+                        <button class="btn blue upload-ckfinder" data-resultfield=".textA" data-folderpath="/web" type="button">Upload Image</button>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.BackgroundWebUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BottomBackgroudUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.BottomBackgroudUrl, new { htmlAttributes = new { @class = "form-control text0" } })
+                    <span class="input-group-btn">
+                        <button class="btn blue upload-ckfinder" data-resultfield=".text0" data-folderpath="/web" type="button">Upload Image</button>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.BottomBackgroudUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LogoUrlBig, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.LogoUrlBig, new { htmlAttributes = new { @class = "form-control text1" } })
+                    <span class="input-group-btn">
+                        <button class="btn blue upload-ckfinder" data-resultfield=".text1" data-folderpath="/web" type="button">Upload Image</button>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.LogoUrlBig, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LogoUrlSmall, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.LogoUrlSmall, new { htmlAttributes = new { @class = "form-control text2" } })
+                    <span class="input-group-btn">
+                        <button class="btn blue upload-ckfinder" data-resultfield=".text2" data-folderpath="/web" type="button">Upload Image</button>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.LogoUrlSmall, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VideoYoutube, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VideoYoutube, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VideoYoutube, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FacebookFanpage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FacebookFanpage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FacebookFanpage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailReceiveContact, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailReceiveContact, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailReceiveContact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GoogleMap, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GoogleMap, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
+                @Html.ValidationMessageFor(model => model.GoogleMap, "", new { @class = "text-danger" })
+                <div id="gmap_geocoding" class="gmaps"> </div>
+                <input id="gmap_geocoding_address" class="form-control" disabled />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GoogleAnalytics, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GoogleAnalytics, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
+                @Html.ValidationMessageFor(model => model.GoogleAnalytics, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PluginOther, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PluginOther, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
+                @Html.ValidationMessageFor(model => model.PluginOther, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@DTextHTML.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAinLvd_xP78YcJfsMavbpdkPpJK6lrlLY"></script>
+<script src="~/Areas/Admin/assets/plugins/locationpicker/locationpicker.jquery.min.js"></script>
+<script src="~/Areas/Admin/assets/plugins/ckeditor/ckeditor.js"></script>
+<script src="~/Areas/Admin/assets/plugins/ckfinder/ckfinder.js"></script>
+<script>
+    $(function () {
+        $('#gmap_geocoding').locationpicker({
+            location: { latitude: @lat, longitude: @lng },
+            radius: 0,
+            inputBinding: {
+                locationNameInput: $('#gmap_geocoding_address')
+            },
+            onchanged: function (currentLocation, radius, isMarkerDropped) {
+                $('#GoogleMap').val(currentLocation.latitude + ", " + currentLocation.longitude);
+            }
+        });
+    });
+</script>
+}

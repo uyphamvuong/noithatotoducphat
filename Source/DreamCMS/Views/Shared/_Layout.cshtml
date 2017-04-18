@@ -8,7 +8,6 @@
         lat = temp[0].Trim(); lng = temp[1].Trim();
     }
 }
-
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -21,25 +20,24 @@
     <meta name="title" content="@ViewBag.Title - @Setting.Get("CompanyName")" />
     <meta name="description" content="@ViewBag.Description" />
     <meta name="keywords" content="@ViewBag.Keywords" />
-    <meta name="ROBOTS" content="index, follow" />
-    <meta name="author" content="http://www.baobitoanquoc.net@(Html.Raw(Request.RawUrl))" />
+    <meta name="author" content="http://www.noithatotoducphat.com@(Html.Raw(Request.RawUrl))" />
     <meta name="googlebot" content="noarchive" />
     <meta content="vi-VN" itemprop="inLanguage" />
 
     <meta itemprop="datePublished" content="@DateTime.Now.ToShortDateString()" />
-    <meta itemprop="image" content="http://www.baobitoanquoc.net@(Html.Raw(ViewBag.ImageUrl))" />
+    <meta itemprop="image" content="http://www.noithatotoducphat.com@(Html.Raw(ViewBag.ImageUrl))" />
     <meta itemprop="headline" content="@ViewBag.Title" />
-    <meta itemprop="url" content="http://www.baobitoanquoc.net@(Html.Raw(Request.RawUrl))" />
+    <meta itemprop="url" content="http://www.noithatotoducphat.com@(Html.Raw(Request.RawUrl))" />
     <meta itemprop="alternativeHeadline" content="@ViewBag.Title" />
     <meta itemprop="genre" content="@ViewBag.CategoryName" />
 
-    <link rel="canonical" href="http://www.baobitoanquoc.net@(Html.Raw(Request.RawUrl))" />
+    <link rel="canonical" href="http://www.noithatotoducphat.com@(Html.Raw(Request.RawUrl))" />
 
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.baobitoanquoc.net@(Html.Raw(Request.RawUrl))" />
+    <meta property="og:url" content="http://www.noithatotoducphat.com@(Html.Raw(Request.RawUrl))" />
     <meta property="og:title" content="@ViewBag.Title" />
     <meta property="og:description" content="@ViewBag.Description" />
-    <meta property="og:image" content="http://www.baobitoanquoc.net@(Html.Raw(ViewBag.ImageUrl))" />
+    <meta property="og:image" content="http://www.noithatotoducphat.com@(Html.Raw(ViewBag.ImageUrl))" />
     <meta property="og:site_name" content="@Setting.Get("CompanyName")" />
     <meta property="og:updated_time" content="@DateTime.Now.ToShortDateString()" />
     <meta property="article:publisher" content="@Setting.Get("CompanyName")" />
@@ -56,6 +54,7 @@
     <link href="~/assets/css/animate.min.css" rel="stylesheet" />
     <link href="~/assets/js/revslider/css/settings.css" rel="stylesheet" />
     <link href="~/assets/js/swipebox/css/swipebox.min.css" rel="stylesheet" />
+    <link href="~/assets/js/flexisel/css/style.css" rel="stylesheet" />
     <link href="~/assets/css/main.css" rel="stylesheet" />
     <link href="~/assets/css/responsive.css" rel="stylesheet" />
 
@@ -64,8 +63,6 @@
 </head>
 <body style="background: #fff url(@Setting.Get("BackgroundWebUrl")) fixed;">
     <!-- LOADING -->
-    
-
     <!-- [HEADER] -->
     <header class="header clearfix">
         <div class="container">
@@ -78,7 +75,7 @@
         </div>
 
         @Html.Partial("_Layout/_TopNavbar")
-    </header>   
+    </header>
 
     @RenderSection("Slider", required: false)
 
@@ -87,16 +84,18 @@
 
         <div class="container">
             <div class="row content">
-                @Html.Partial("_Layout/_LeftMenu")
 
-                <div class="col-sm-9">
+                <div id="web-right" class="col-sm-9">
                     @RenderBody()
                 </div>
+
+                @Html.Partial("_Layout/_LeftMenu")
+
             </div>
         </div>
 
         @RenderSection("News_Video", required: false)
-        
+
     </div>
 
     @Html.Partial("_Layout/_Footer")
@@ -115,6 +114,10 @@
     <script src="~/assets/js/revslider/js/jquery.themepunch.plugins.min.js"></script>
     <script src="~/assets/js/revslider/js/jquery.themepunch.revolution.min.js"></script>
     <script src="~/assets/js/swipebox/js/jquery.swipebox.min.js"></script>
+    <script src="~/assets/js/flexisel/js/jquery.flexisel.js"></script>
+    <script src="~/assets/js/fitvids/jquery.fitvids.js"></script>
+    <script src="~/assets/js/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
     <script src="~/assets/js/main.js" type="text/javascript"></script>
 
     <!-- JavaScript library that detects HTML5 and CSS3 features in the user's browser -->
