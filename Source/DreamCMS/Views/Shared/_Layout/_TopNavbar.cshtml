@@ -4,7 +4,13 @@
     List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.IsDisable == false && x.IdRoot==null && x.IsShowOnTop==true).OrderByDescending(x => x.Order).ThenBy(x => x.GroupName).ToList();
     if (ListGroupProduct == null) { ListGroupProduct = new List<GroupProduct>(); }
 
-
+    string actionName = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLower();
+    string controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    string titleid = "";
+    if (HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"]!=null) { titleid = HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"].ToString().ToLower(); }
+    //string titleidgroup = "";
+    //if (HttpContext.Current.Request.RequestContext.RouteData.Values["titleidgroup"] != null) { titleidgroup = HttpContext.Current.Request.RequestContext.RouteData.Values["titleidgroup"].ToString().ToLower(); }
+    //@(actionName=="viewgroup"&&controllerName=="product"&&titleidgroup==@gr.GroupName.ToLower()?"active":"")
 }
 <!-- Nav -->
 <nav class="navbar navbar-default navbar-home">
@@ -21,8 +27,8 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">TRANG CHỦ <span class="sr-only">(current)</span></a></li>
-                    <li><a href="/gioi-thieu">GIỚI THIỆU</a></li>
+                    <li class="@(actionName=="index"&&controllerName=="home"?"active":"")"><a href="/">TRANG CHỦ <span class="sr-only">(current)</span></a></li>
+                    <li class="@(actionName=="viewpages" && controllerName == "home" && titleid=="gioi-thieu"? "active" : "")"><a href="/gioi-thieu">GIỚI THIỆU</a></li>
                     @foreach (GroupProduct gr in ListGroupProduct)
                     {
                         if (gr.GroupProductChildrens.Count > 0)
@@ -39,12 +45,12 @@
                         }
                         else
                         {
-                            <li><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
+                            <li class=""><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
                         }
                     }
-                    <li><a href="/video">VIDEOS</a></li>
-                    <li><a href="/tin-tuc">TIN TỨC</a></li>
-                    <li><a href="/lien-he">LIÊN HỆ</a></li>
+                    <li class="@((actionName=="detailvideo"||actionName=="indexvideo")&&controllerName=="activity"?"active":"")"><a href="/video">VIDEOS</a></li>
+                    <li class="@((actionName=="detailnews"||actionName=="indexnews")&&controllerName=="activity"?"active":"")"><a href="/tin-tuc">TIN TỨC</a></li>
+                    <li class="@(actionName=="contact"&&controllerName=="home"?"active":"")"><a href="/lien-he">LIÊN HỆ</a></li>
                 </ul>
 
             </div><!-- /.navbar-collapse -->

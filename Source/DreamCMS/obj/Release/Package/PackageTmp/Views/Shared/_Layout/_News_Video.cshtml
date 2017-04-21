@@ -1,11 +1,13 @@
 ﻿@using DreamCMS.Models
 @{
     DBFrontEnd db = new DBFrontEnd();
-    var firstitem = db.Newss.Where(x => x.IsDisable == false).FirstOrDefault();
-    
+    News firstitem = db.Newss.Where(x => x.IsDisable == false).FirstOrDefault();    
     List<News> ListNews= db.Newss.Where(x => x.IsDisable == false).ToList();
     if (ListNews == null) { ListNews = new List<News>(); }
-    var set = db.Settings.Where(x => x.SettingId == 11).FirstOrDefault();
+
+    Video firstvideo = db.Videos.Where(x => x.IsDisable == false).FirstOrDefault();    
+    List<Video> ListVideo = db.Videos.Where(x => x.IsDisable == false).ToList();
+    if (ListVideo == null) { ListVideo = new List<Video>(); }
 }
 
 
@@ -14,42 +16,49 @@
         <div class="col-sm-8">
             <div class="panel panel-news">
                 <div class="panel-heading"><a href="/tin-tuc" style="color:#ed3237">TIN TỨC VÀ SỰ KIỆN</a></div>
-
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="/tin-tuc/@firstitem.TitleId" style="color: inherit;">
-                            <div class="thumbnail"><img src="@firstitem.ImgUrl" /></div>
+                        <a href="/tin-tuc/@firstitem.TitleId" style="color: inherit;" title="@firstitem.Title">
+                            <div class="thumbnail"><img src="@firstitem.ImgUrl" alt="@firstitem.Title" /></div>
                             <h3 class="big-title">@firstitem.Title</h3>
                             <p>
                                 @firstitem.Intro
                             </p>
                         </a>
                     </div>
-
                     <div class="col-sm-6 news">
                         @foreach (News tin in ListNews)
                         {
-                            <a href="/tin-tuc/@tin.TitleId" style="color: inherit;">
+                            <a href="/tin-tuc/@tin.TitleId" style="color: inherit;" title="@tin.Title">
                                 <div class="sma-news">
-                                    <div class="thumbnail"><img src="@tin.ImgUrl" /></div>
+                                    <div class="thumbnail"><img src="@tin.ImgUrl" alt="@tin.Title" /></div>
                                     <h5 class="sma-title">@tin.Title</h5>
                                 </div>
                             </a>
                         }
-
-
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-news">
                 <div class="panel-heading"><a href="/video" style="color:#ed3237">VIDEO</a></div>
                 <div class="content">
-                    <iframe style="width:100%;" height="300" src="@Setting.Get("VideoYoutube")"></iframe>
+                    <!-- ajax_video -->
+                    <div class="ajax_video">
+                        <iframe class="avd" width="450" height="300" id="video-iframe" src="https://www.youtube.com/embed/@firstvideo.IdText" frameborder="0" allowfullscreen></iframe>
+                        <div class="dvc">
+                            <ul id="flexiselDemo4">
+                                @foreach (Video vi in ListVideo)
+                                {
+                                    <li><a class="listVideo" redr="@vi.IdText"><img src="@vi.ImgUrl" /></a></li>
+                                }
+                            </ul>
+                        </div>
+
+                    </div><!-- END ajax_video -->
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>

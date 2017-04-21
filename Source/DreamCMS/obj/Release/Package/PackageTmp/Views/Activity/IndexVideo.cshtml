@@ -1,6 +1,6 @@
 ﻿@using DreamCMS.Models
 @using MvcPaging
-@model IPagedList<Videos>
+@model IPagedList<Video>
 
 @{
     ViewBag.Title = "Danh sách các video";
@@ -14,7 +14,7 @@
         <h3 class="panel-title">VIDEO</h3>
     </div>
     <div class="panel-body">
-        @foreach (Videos po in Model)
+        @foreach (Video po in Model)
         {
             <div class="row">
                 <div class="col-sm-4 item-event-img">

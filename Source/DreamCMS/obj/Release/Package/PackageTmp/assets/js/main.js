@@ -8,6 +8,7 @@ $(document).ready(function () {
         Core_AutoAddSwipeBoxBodyContext();
     };
     Core_UserOnline();
+    $("#video-iframe").fitVids();
 });
 
 // Scroll To Top
@@ -195,5 +196,5 @@ function Core_UserOnline () {
             $('#Count_TotalView').text(ds.Count_TotalView);
         }                 
     };
-    $.connection.hub.start();
+    $.connection.hub.start({ transport: 'longPolling' });
 }

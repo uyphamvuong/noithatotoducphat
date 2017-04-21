@@ -8,11 +8,11 @@
 /* Import Font */
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
 /* ======================== BODY & PAGE ALL */
 
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .text-main{color:#ed3237}
@@ -136,10 +136,10 @@ body{
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
     }
-#bs-example-navbar-collapse-1 .nav>li>a{
-        text-transform:uppercase;
+#bs-example-navbar-collapse-1 .nav > li > a {
+    text-transform: uppercase;
+    font-weight: bold;
 }
-
 .navbar-home .active a{
     background-color: #ed3237!important;
     color: #fff!important;
@@ -183,6 +183,9 @@ body{
     background-color: #f1f1f1;
     border-radius: 3px;
     margin-bottom: 20px;
+}
+.sidenav .nav>li>a:hover{
+    background-color: #ccc;
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
@@ -280,6 +283,9 @@ body{
         font-family: 'Montserrat', sans-serif;
         font-weight:bold;
     }
+    .panel-news .big-title:hover{
+        color: #ed3237
+    }
 .sma-news{
     display:inline-block;
 }
@@ -296,9 +302,20 @@ body{
         margin-top:0;
         font-weight: bold;
     }
+    .sma-news .sma-title:hover{
+        color: #ed3237;
+    }
+    .sma-news .sma-title:visited{
+        color: #444;
+    }
 .panel-news iframe{
     border: 0;
     width: 100%!important;
+}
+.body-news-title{
+    color: #ed3237;
+    font-weight:bold;
+    margin-bottom: 20px;
 }
 
 /*panel-page-blank*/

@@ -12,6 +12,15 @@
     }
 }
 @media only screen and (max-width: 767px) {
+
+    .navbar-brand{
+        display: block;
+    }
+
+    #web-right {
+        float: none;
+    }
+
     .panel-product .thumbnail {
         height: auto;
     }

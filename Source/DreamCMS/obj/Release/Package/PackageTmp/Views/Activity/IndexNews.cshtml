@@ -19,13 +19,13 @@
         {
             <div class="row">
                 <div class="col-sm-4 item-event-img">
-                    <a href="/tin-tuc/@po.TitleId" class="thumbnail">
-                        <img class="img-responsive" src="@po.ImgUrl" />
+                    <a href="/tin-tuc/@po.TitleId" class="thumbnail" title="@po.Title">
+                        <img class="img-responsive" src="@po.ImgUrl" alt="@po.Title" />
                     </a>
                 </div>
                 <div class="col-sm-8 item-event-sub">
-                    <a href="/tin-tuc/@po.TitleId"><h5>@po.Title</h5></a>
-                    <p>
+                    <a href="/tin-tuc/@po.TitleId" title="@po.Title"><h5>@po.Title</h5></a>
+                    <p title="@po.Title">
                         @po.Intro
                     </p>
                 </div>
