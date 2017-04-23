@@ -7,3 +7,8 @@ D:\Source HIEN\DreamCMS.Default\bin\Debug\DreamCMS.Default.dll
 D:\Source HIEN\DreamCMS.Default\bin\Debug\DreamCMS.Default.pdb
 D:\Source HIEN\DreamCMS.Default\obj\Debug\DreamCMS.Default.dll
 D:\Source HIEN\DreamCMS.Default\obj\Debug\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Default\bin\Debug\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Default\bin\Debug\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Default\obj\Debug\DreamCMS.Default.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Default\obj\Debug\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Default\obj\Debug\DreamCMS.Default.pdb

@@ -3,3 +3,8 @@ D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\bin\Debug\DreamCMS.FuncHel
 D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.csprojResolveAssemblyReference.cache
 D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.dll
 D:\Project\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.FuncHelp\bin\Debug\DreamCMS.FuncHelp.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.FuncHelp\bin\Debug\DreamCMS.FuncHelp.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.FuncHelp\obj\Debug\DreamCMS.FuncHelp.pdb

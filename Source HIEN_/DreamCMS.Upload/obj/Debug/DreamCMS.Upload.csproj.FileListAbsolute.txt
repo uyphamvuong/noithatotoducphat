@@ -12,3 +12,10 @@ D:\Source HIEN\DreamCMS.Upload\bin\Debug\DreamCMS.Default.pdb
 D:\Source HIEN\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.csprojResolveAssemblyReference.cache
 D:\Source HIEN\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.dll
 D:\Source HIEN\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\bin\Debug\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\bin\Debug\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.pdb

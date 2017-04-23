@@ -7,3 +7,8 @@ D:\Source HIEN\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.dll
 D:\Source HIEN\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.pdb
 D:\Source HIEN\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.dll
 D:\Source HIEN\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Encrypt\bin\Debug\DreamCMS.Encrypt.pdb
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.dll
+E:\GitHub\noithatotoducphat\Source HIEN_\DreamCMS.Encrypt\obj\Debug\DreamCMS.Encrypt.pdb

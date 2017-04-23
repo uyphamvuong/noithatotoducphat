@@ -5,3 +5,10 @@ D:\Project\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Default.p
 D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.csprojResolveAssemblyReference.cache
 D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.dll
 D:\Project\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Upload.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\bin\Debug\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Upload\obj\Debug\DreamCMS.Upload.pdb

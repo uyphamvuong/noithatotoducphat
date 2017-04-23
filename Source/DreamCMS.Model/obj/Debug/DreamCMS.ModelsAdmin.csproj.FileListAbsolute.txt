@@ -10,3 +10,15 @@ D:\Project\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\EntityFramework.Sql
 D:\Project\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.ModelsAdmin.csprojResolveAssemblyReference.cache
 D:\Project\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.Aibiet.dll
 D:\Project\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.Aibiet.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\DreamCMS.Aibiet.dll.config
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\DreamCMS.Aibiet.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\DreamCMS.Aibiet.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\DreamCMS.Default.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\EntityFramework.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\DreamCMS.Default.pdb
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\EntityFramework.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.ModelsAdmin.csprojResolveAssemblyReference.cache
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.Aibiet.dll
+E:\GitHub\noithatotoducphat\Source\DreamCMS.Model\obj\Debug\DreamCMS.Aibiet.pdb
