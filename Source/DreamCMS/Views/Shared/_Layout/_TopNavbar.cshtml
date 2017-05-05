@@ -1,13 +1,13 @@
 ﻿@using DreamCMS.Models
 @{
     DBFrontEnd db = new DBFrontEnd();
-    List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.IsDisable == false && x.IdRoot==null && x.IsShowOnTop==true).OrderByDescending(x => x.Order).ThenBy(x => x.GroupName).ToList();
+    List<GroupProduct> ListGroupProduct = db.GroupProducts.Where(x => x.IsDisable == false && x.IdRoot == null && x.IsShowOnTop == true).OrderBy(x => x.Order).ThenBy(x => x.GroupName).ToList();
     if (ListGroupProduct == null) { ListGroupProduct = new List<GroupProduct>(); }
 
     string actionName = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLower();
     string controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
     string titleid = "";
-    if (HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"]!=null) { titleid = HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"].ToString().ToLower(); }
+    if (HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"] != null) { titleid = HttpContext.Current.Request.RequestContext.RouteData.Values["titleid"].ToString().ToLower(); }
     //string titleidgroup = "";
     //if (HttpContext.Current.Request.RequestContext.RouteData.Values["titleidgroup"] != null) { titleidgroup = HttpContext.Current.Request.RequestContext.RouteData.Values["titleidgroup"].ToString().ToLower(); }
     //@(actionName=="viewgroup"&&controllerName=="product"&&titleidgroup==@gr.GroupName.ToLower()?"active":"")
@@ -29,31 +29,77 @@
                 <ul class="nav navbar-nav">
                     <li class="@(actionName=="index"&&controllerName=="home"?"active":"")"><a href="/">TRANG CHỦ <span class="sr-only">(current)</span></a></li>
                     <li class="@(actionName=="viewpages" && controllerName == "home" && titleid=="gioi-thieu"? "active" : "")"><a href="/gioi-thieu">GIỚI THIỆU</a></li>
-                    @foreach (GroupProduct gr in ListGroupProduct)
-                    {
-                        if (gr.GroupProductChildrens.Count > 0)
+                    @*@foreach (GroupProduct gr in ListGroupProduct)
                         {
-                            <li class="dropdown">
-                                <a href="/san-pham/@gr.SeoUrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@gr.GroupName<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    @foreach (GroupProduct gc in gr.GroupProductChildrens)
-                                    {
-                                        <li><a href="/san-pham/@gc.SeoUrl">@gc.GroupName</a></li>
-                                    }
-                                </ul>
+                            if (gr.GroupProductChildrens.Count > 0)
+                            {
+                                <li class="dropdown">
+                                    <a href="/san-pham/@gr.SeoUrl" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@gr.GroupName<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        @foreach (GroupProduct gc in gr.GroupProductChildrens)
+                                        {
+                                            <li><a href="/san-pham/@gc.SeoUrl">@gc.GroupName</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class=""><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
+                            }
+                        }*@
+                    <li class="dropdown">
+                        <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-link" data-target="#" href="#">
+                            SẢN PHẨM <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            @*<li class="divider"></li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Hover me for more options</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">Second level</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a href="#">Even More..</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">3rd level</a></li>
+                                                <li><a href="#">3rd level</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Second level</a></li>
+                                        <li><a href="#">Second level</a></li>
+                                    </ul>
+                                </li>>*@
+                            @foreach (GroupProduct gr in ListGroupProduct)
+                            {
+                                if (gr.GroupProductChildrens.Count > 0)
+                                {
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="/san-pham/@gr.SeoUrl">@gr.GroupName</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (GroupProduct gc in gr.GroupProductChildrens)
+                                            {
+                                                <li><a href="/san-pham/@gc.SeoUrl">@gc.GroupName</a></li>
+                                               
+                                            }
+                                        </ul>
+                                
                             </li>
-                        }
-                        else
-                        {
-                            <li class=""><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
-                        }
-                    }
-                    <li class="@((actionName=="detailvideo"||actionName=="indexvideo")&&controllerName=="activity"?"active":"")"><a href="/video">VIDEOS</a></li>
-                    <li class="@((actionName=="detailnews"||actionName=="indexnews")&&controllerName=="activity"?"active":"")"><a href="/tin-tuc">TIN TỨC</a></li>
-                    <li class="@(actionName=="contact"&&controllerName=="home"?"active":"")"><a href="/lien-he">LIÊN HỆ</a></li>
-                </ul>
+                                }
+                                else
+                                {
+                                    <li class=""><a href="/san-pham/@gr.SeoUrl">@gr.GroupName</a></li>
+                                }
+                            }
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </div>
-</nav><!-- END Nav -->
+                        </ul>
+                        </li>
+                        <li class="@(actionName=="viewpages" && controllerName == "home" && titleid=="bao-hanh"? "active" : "")"><a href="/bao-hanh">BẢO HÀNH</a></li>
+                        <li class="@((actionName=="detailvideo"||actionName=="indexvideo")&&controllerName=="activity"?"active":"")"><a href="/video">VIDEOS</a></li>
+                        <li class="@((actionName=="detailnews"||actionName=="indexnews")&&controllerName=="activity"?"active":"")"><a href="/tin-tuc">TIN TỨC</a></li>
+                        <li class="@(actionName=="contact"&&controllerName=="home"?"active":"")"><a href="/lien-he">LIÊN HỆ</a></li>
+                        </ul>
+
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </nav><!-- END Nav -->

@@ -52,7 +52,7 @@ function Core_revsliderHome() {
         revapi2 = $('#rev_sliderHome').show().revolution(
          {
              dottedOverlay: "none",
-             delay: 9000,
+             delay: 2000,
              startwidth: 1900,
              startheight: 600,
              hideThumbs: 200,
@@ -65,8 +65,8 @@ function Core_revsliderHome() {
              navigationArrows: "solo",
              navigationStyle: "round",
 
-             touchenabled: "on",
-             onHoverStop: "on",
+             touchenabled: "off",
+             onHoverStop: "off",
 
              swipe_velocity: 0.7,
              swipe_min_touches: 1,

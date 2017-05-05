@@ -33,10 +33,19 @@ namespace DreamCMS.Controllers
 
             ViewBag.GroupProduct = gp;
             int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+            List<Product> ListProduct = new List<Product>();
+            List<Product> ListProductOfParent = db.Products.Include(x => x.GroupProduct).Where(x => x.GroupProduct.GroupProductId == gp.GroupProductId).OrderByDescending(x => x.Order).ToList();
 
-            List<Product> ListProduct = db.Products.Where(x => x.IsDisable == false && x.GroupProductId == gp.GroupProductId).OrderByDescending(x => x.Order).ToList();
+            //nếu là nhóm cha thì lấy sản phẩm nhóm con và của chính nó(nếu có)
+            if (gp.IdRoot == null) 
+                ListProduct = db.Products.Include(x => x.GroupProduct).Where(x => x.GroupProduct.GroupProductParrent.GroupProductId == gp.GroupProductId).OrderByDescending(x => x.Order).ToList();
+            
+            ListProduct.AddRange(ListProductOfParent);
+
             if (ListProduct == null) { ListProduct = new List<Product>(); }
+            
             return View(ListProduct.ToPagedList(currentPageIndex, 12));
+
         }
 
         //ViewDetail

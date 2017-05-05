@@ -12,7 +12,11 @@
 /* ======================== BODY & PAGE ALL */
 
 body{
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif;
+    font-size: 16px !important;
+    font-weight: 500;
+
 }
 
 .text-main{color:#ed3237}
@@ -119,14 +123,17 @@ body{
 
 /* Navbar */
 .navbar-home{
-    background-color: #333;
+    background-color: #ed3237;
     margin-bottom: 0;
     border:0;
     border-radius:0!important;
 }
+.dropdown-menu li {
+    padding: 5px 0px;
+}
 
 .navbar-home a{
-    color: #ccc!important;
+    color: #fff!important;
     font-size: 16px;
 }
     .navbar-home a:hover {
@@ -148,10 +155,10 @@ body{
 .navbar-home .navbar-nav>.open>a, 
 .navbar-home .navbar-nav>.open>a:focus, 
 .navbar-home .navbar-nav>.open>a:hover{
-    background-color: #222;
+    background-color: #ed3237 ;
 }
 .navbar-home .dropdown-menu{
-    background-color: #222;
+    background-color: #ed3237 ;
     border-top:0;
 }
 .navbar-home .dropdown-menu>li>a:focus, 
@@ -206,7 +213,8 @@ body{
         padding: 0;
     }
 .panel-product .caption h4{
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif;
 }
 .panel-product .caption p.des{
     overflow: hidden;
@@ -414,3 +422,56 @@ footer {
     text-align: left;
 }
 .footerleft p i { width:20px; color:#999;}
+
+/*menu TOP LEHIEN*/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.divider {
+    padding:0 !important;
+    background-color: white !important;
+}

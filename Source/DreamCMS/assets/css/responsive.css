@@ -1,3 +1,9 @@
+
+@media only screen and (min-width: 1200px){
+   .container {
+    width: 90%;
+    }
+}
 @media only screen and (max-width: 1200px) and (min-width: 901px){
     .slogan h1 {
         font-size:44px;

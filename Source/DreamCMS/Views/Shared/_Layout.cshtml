@@ -65,12 +65,13 @@
     <!-- LOADING -->
     <!-- [HEADER] -->
     <header class="header clearfix">
-        <div class="container">
+        <div class="container" style="width:100%">
             <div class="row row-intro-top">
-                <a class="logo col-md-3 col-sm-4" href="#"><img src="~/assets/img/logo.png" class="img-logo" alt="Cinque Terre"></a>
+                @Html.Raw(Setting.Get("TopContact"))
+                @*<a class="logo col-md-3 col-sm-4" href="#"><img src="~/assets/img/logo.png" class="img-logo" alt="Cinque Terre"></a>
                 <div class="slogan col-md-8 col-sm-8">
                     @Html.Raw(Setting.Get("TopContact"))
-                </div>
+                </div>*@
             </div>
         </div>
 

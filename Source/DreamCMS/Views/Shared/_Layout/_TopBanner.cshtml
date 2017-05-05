@@ -12,7 +12,8 @@
         <ul>
             @foreach (Banner lb in ListBanner)
             {
-                <li data-transition="random" data-slotamount="7" data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-link="@lb.Link">
+                @*<li data-transition="random" data-slotamount="7" data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-link="@lb.Link">*@
+                <li data-transition="random" data-slotamount="7" data-fstransition="fade" data-fsmasterspeed="50" data-fsslotamount="7" >
                     <img src="@lb.ImgUrl" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                 </li>
             }

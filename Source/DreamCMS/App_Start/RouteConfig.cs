@@ -16,6 +16,15 @@ namespace DreamCMS
                 defaults: new { controller = "Home", action = "ViewPages", titleid = "gioi-thieu" }
             );
 
+            // Bảo hành
+            routes.MapRoute(
+                name: "BaoHanh",
+                url: "bao-hanh",
+                defaults: new { controller = "Home", action = "ViewPages", titleid = "bao-hanh" }
+            );
+
+
+
             // Giới thiệu
             routes.MapRoute(
                 name: "LienHe",
